@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Setu — Invest · Back the rail for the world's largest money corridor</title>
+<meta name="description" content="Setu is raising a pre-seed round to launch the UAE→India remittance corridor on a stablecoin rail. The ask, use of funds, milestones, and the investment case." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,400..700&family=Hanken+Grotesk:wght@300..800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .iv-hero{padding:84px 0 30px;position:relative;overflow:hidden}
+  .iv-hero h1{font-size:clamp(40px,6.4vw,80px);margin:.2em 0 .28em;font-weight:600;letter-spacing:-.02em}
+  .iv-hero h1 .it{font-style:italic;color:var(--saffron)}
+  .askgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+  @media(max-width:760px){.askgrid{grid-template-columns:1fr}}
+  .askbig{background:linear-gradient(135deg,rgba(232,163,61,.18),rgba(70,194,142,.08));border:1px solid var(--saffron-deep);border-radius:20px;padding:34px}
+  .askbig b{font-family:"Fraunces";font-size:54px;color:var(--saffron);display:block;line-height:1}
+  .askbig.jade b{color:var(--jade)}.askbig.sky b{color:var(--sky)}
+  .askbig span{display:block;margin-top:10px;color:#e6dcc9;font-size:15px}
+  /* use of funds */
+  .uof{margin-top:30px;display:grid;gap:14px}
+  .ufrow{display:grid;grid-template-columns:230px 1fr 70px;align-items:center;gap:14px}
+  @media(max-width:680px){.ufrow{grid-template-columns:150px 1fr 56px}}
+  .ufrow .lab{font-size:14.5px;color:var(--cream-dim)}
+  .uftrack{height:30px;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  .uffill{height:100%;border-radius:8px 0 0 8px;display:flex;align-items:center;padding-left:11px;font-size:12px;font-weight:650;color:#1c1100}
+  .ufrow .pct{font-family:"JetBrains Mono";font-size:14px;text-align:right;color:var(--cream)}
+  .src{font-size:12px;color:var(--cream-faint);margin-top:12px}
+  /* bull case */
+  .bull{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+  @media(max-width:820px){.bull{grid-template-columns:1fr}}
+  .bull .b{border:1px solid var(--line);border-radius:14px;padding:22px;background:var(--panel)}
+  .bull .b .n{font-family:"Fraunces";font-size:15px;color:var(--ink);background:var(--saffron);width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;margin-bottom:12px}
+  .bull .b h3{margin:0 0 6px;font-size:17px}
+  .bull .b p{margin:0;font-size:14px;color:#d4cab7}
+  /* team */
+  .team{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+  @media(max-width:760px){.team{grid-template-columns:1fr}}
+  .team .t{border:1px dashed var(--line-strong);border-radius:16px;padding:24px;background:var(--panel);text-align:center}
+  .team .t .av{width:70px;height:70px;border-radius:50%;margin:0 auto 14px;background:rgba(232,163,61,.12);border:1px solid var(--saffron-deep);display:flex;align-items:center;justify-content:center;font-size:30px}
+  .team .t h4{margin:0 0 2px;font-size:17px}
+  .team .t .role{font-family:"JetBrains Mono";font-size:12px;color:var(--jade)}
+  .team .t p{margin:10px 0 0;font-size:13px;color:var(--cream-faint)}
+  /* CTA block */
+  .closecta{background:linear-gradient(135deg,rgba(70,194,142,.14),rgba(232,163,61,.10));border:1px solid var(--saffron-deep);border-radius:24px;padding:48px;text-align:center;margin-top:20px}
+  .closecta h2{font-size:clamp(28px,4.4vw,46px);margin:0 0 14px}
+  .terms{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:24px}
+  @media(max-width:680px){.terms{grid-template-columns:1fr}}
+  .terms .row{display:flex;justify-content:space-between;border:1px solid var(--line);border-radius:12px;padding:14px 18px;background:var(--panel);font-size:14.5px}
+  .terms .row span{color:var(--cream-dim)}.terms .row b{color:var(--cream)}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <svg width="26" height="26" viewBox="0 0 26 26"><path d="M2 18 C8 6, 18 6, 24 18" stroke="#E8A33D" stroke-width="2.4" fill="none" stroke-linecap="round"/><circle cx="2" cy="18" r="2.6" fill="#46C28E"/><circle cx="24" cy="18" r="2.6" fill="#46C28E"/></svg>
+      Setu
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="problem.html">Problem</a>
+      <a href="market.html">Market</a>
+      <a href="product.html">Product</a>
+      <a href="technology.html">Technology</a>
+      <a href="economics.html">Economics</a>
+      <a href="tokenomics.html">Token</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="competition.html">Competition</a>
+      <a href="invest.html" class="active">Invest</a>
+    </nav>
+    <a class="btn solid sm navcta" href="#contact">Get the deck →</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<div class="iv-hero">
+  <div class="wrap">
+    <div class="eyebrow">The Ask</div>
+    <h1>Back the rail for the<br><span class="it">world's largest money corridor.</span></h1>
+    <p class="lede">We're raising a pre-seed round to do one thing exceptionally well: launch the UAE→India remittance corridor on a stablecoin rail, get the first real users, and prove the economics. This is the moment with the most upside per dollar — before the corridor is won.</p>
+
+    <div class="askgrid rv">
+      <div class="askbig"><b>$1.5M</b><span>Pre-seed round to reach a live, measurable corridor</span></div>
+      <div class="askbig jade"><b>18 mo</b><span>Runway to proven corridor economics &amp; a Series A</span></div>
+      <div class="askbig sky"><b>10k+</b><span>Target active senders, with a real retention curve</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ USE OF FUNDS ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker rv">Use of funds</div>
+    <h2 class="big rv">Where the $1.5M goes.</h2>
+    <p class="sub rv">Weighted toward the two things that actually de-risk the company first: getting compliant, and shipping a product real people use.</p>
+
+    <div class="uof rv">
+      <div class="ufrow"><span class="lab">Product &amp; engineering</span><div class="uftrack"><div class="uffill" style="width:35%;background:linear-gradient(90deg,#46C28E,#2e9d6e);color:#04150d">$525k</div></div><span class="pct">35%</span></div>
+      <div class="ufrow"><span class="lab">Legal, licensing &amp; compliance</span><div class="uftrack"><div class="uffill" style="width:25%;background:linear-gradient(90deg,#E8A33D,#c47e1d)">$375k</div></div><span class="pct">25%</span></div>
+      <div class="ufrow"><span class="lab">Liquidity / float bootstrap</span><div class="uftrack"><div class="uffill" style="width:15%;background:linear-gradient(90deg,#5BA8D8,#3d83b3);color:#04121d">$225k</div></div><span class="pct">15%</span></div>
+      <div class="ufrow"><span class="lab">Growth &amp; corridor ops (UAE)</span><div class="uftrack"><div class="uffill" style="width:15%;background:linear-gradient(90deg,#c47e1d,#8a6a3a)">$225k</div></div><span class="pct">15%</span></div>
+      <div class="ufrow"><span class="lab">Operating buffer</span><div class="uftrack"><div class="uffill" style="width:10%;background:linear-gradient(90deg,#c7bca6,#8a8270);color:#1c1100">$150k</div></div><span class="pct">10%</span></div>
+    </div>
+    <p class="src">Illustrative allocation for planning; actual deployment adjusts to licensing timelines, partner terms and traction.</p>
+  </div>
+</section>
+
+<!-- ============ WHAT IT BUYS ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker rv">What the raise buys</div>
+    <h2 class="big rv">Concrete milestones — not "runway."</h2>
+    <p class="sub rv">By the end of this round, four risks are retired and the company is positioned to raise a Series A on evidence, not slides.</p>
+    <div class="mt grid4 keep2 rv">
+      <div class="card"><div class="num">✓</div><h3>Compliant &amp; live</h3><p>ADGM entity, licensing path, partners signed, corridor operating legally.</p></div>
+      <div class="card"><div class="num">✓</div><h3>Real users</h3><p>10k+ active senders and a measured retention curve proving repeat behaviour.</p></div>
+      <div class="card"><div class="num">✓</div><h3>Working liquidity</h3><p>LP network started, routing engine live, spreads trending down.</p></div>
+      <div class="card"><div class="num">✓</div><h3>Proven economics</h3><p>Real per-transfer margins and CAC/LTV data from live cohorts.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BULL CASE ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker rv">The investment case, on one screen</div>
+    <h2 class="big rv">Six reasons this is the right bet, right now.</h2>
+    <div class="bull rv">
+      <div class="b"><div class="n">1</div><h3>Enormous, sticky market</h3><p>A $900B flow; $135B into India alone; recurring monthly behaviour with structural retention. <a href="market.html">Market →</a></p></div>
+      <div class="b"><div class="n">2</div><h3>Structural cost edge</h3><p>A stablecoin rail sits beneath the cost floor of every incumbent — not a faster horse, a different vehicle. <a href="competition.html">Competition →</a></p></div>
+      <div class="b"><div class="n">3</div><h3>The rail is proven</h3><p>Stablecoins crossed $300B and carry billions in remittances already. The infra risk is largely gone. <a href="market.html">Tailwind →</a></p></div>
+      <div class="b"><div class="n">4</div><h3>Regulatory window open</h3><p>GENIUS Act, MiCA, and the UAE's VARA/ADGM make this buildable as a licensed business today. <a href="technology.html">Compliance →</a></p></div>
+      <div class="b"><div class="n">5</div><h3>Adoption by design</h3><p>Crypto hidden, savings felt, referral-native, agent-reachable. Adoption isn't gated on speculation. <a href="product.html">Product →</a></p></div>
+      <div class="b"><div class="n">6</div><h3>Clear de-risking path</h3><p>Each phase retires one risk in order; capital scales only as risk falls. <a href="roadmap.html">Roadmap →</a></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ROUND STRUCTURE ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker rv">Round structure</div>
+    <h2 class="big rv">Simple, founder-friendly, transparent.</h2>
+    <div class="terms rv">
+      <div class="row"><span>Stage</span><b>Pre-seed</b></div>
+      <div class="row"><span>Target raise</span><b>$1.5M</b></div>
+      <div class="row"><span>Instrument</span><b>SAFE / priced equity</b></div>
+      <div class="row"><span>Valuation &amp; terms</span><b>On request</b></div>
+      <div class="row"><span>Domicile</span><b>ADGM, Abu Dhabi</b></div>
+      <div class="row"><span>Use of proceeds</span><b>Live corridor + 10k users</b></div>
+    </div>
+    <div class="note rv">Any token-related rights (if a token is ultimately issued) would be handled separately and strictly subject to legal and regulatory review — equity investors are not buying a token. <a href="tokenomics.html">See the token framing →</a></div>
+  </div>
+</section>
+
+<!-- ============ TEAM (placeholder) ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker rv">Team</div>
+    <h2 class="big rv">Replace these with your founding team.</h2>
+    <p class="sub rv">Investors back people first. Add real bios, photos and track records here — ideally a founder who knows the corridor, a strong technical lead, and a compliance/payments veteran.</p>
+    <div class="team rv">
+      <div class="t"><div class="av">👤</div><h4>[Founder / CEO]</h4><div class="role">VISION · CORRIDOR · PARTNERSHIPS</div><p>Add a bio: why you, why this corridor, what unfair insight or network you bring.</p></div>
+      <div class="t"><div class="av">👤</div><h4>[CTO / Eng lead]</h4><div class="role">PRODUCT · WALLETS · RAILS</div><p>Add a bio: fintech/crypto engineering track record, prior shipped products.</p></div>
+      <div class="t"><div class="av">👤</div><h4>[Compliance / Payments]</h4><div class="role">LICENSING · AML · BANKING</div><p>Add a bio: payments/remittance regulatory experience — the credibility that unlocks partners.</p></div>
+    </div>
+    <p class="src">Placeholder cards — edit this section with your actual team. A credible, corridor-savvy team is the single biggest driver of a pre-seed decision.</p>
+  </div>
+</section>
+
+<!-- ============ HONEST RISKS ============ -->
+<section>
+  <div class="wrap rv" style="max-width:880px">
+    <div class="kicker">Eyes open</div>
+    <h2 class="big">We'd rather you know the risks now.</h2>
+    <p class="sub">The hard parts are regulatory approval and bootstrapping liquidity — not the technology. We've sequenced the plan to confront the biggest risk (regulatory) first, before deploying significant capital. The full risk register is on the Roadmap tab, and we'll walk you through every line.</p>
+    <a class="btn ghost mt-s" href="roadmap.html">See the risk register →</a>
+  </div>
+</section>
+
+<!-- ============ CLOSE / CONTACT ============ -->
+<section id="contact">
+  <div class="wrap">
+    <div class="closecta rv">
+      <div class="eyebrow" style="color:var(--jade)">Let's talk</div>
+      <h2>Remittances are love, sent in money.<br>Help us tear down the tollbooth.</h2>
+      <p class="sub center" style="max-width:560px">Request the full deck and data room, or set up a call. We'll walk you through the model, the partners, and the plan line by line.</p>
+      <div class="ctarow" style="justify-content:center;margin-top:26px">
+        <a class="btn solid" href="mailto:founders@setu.example?subject=Setu%20pre-seed%20%E2%80%94%20deck%20request">Request the deck →</a>
+        <a class="btn jade" href="mailto:founders@setu.example?subject=Setu%20%E2%80%94%20intro%20call">Book a call</a>
+      </div>
+      <p class="src center" style="margin-top:18px">Replace the email with your real contact before sharing this site.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="footgrid">
+      <div>
+        <div class="foothead">Setu</div>
+        <p style="max-width:340px">Stablecoin rails for the world's biggest money corridor. Local money in, local money out, the crypto kept invisible.</p>
+      </div>
+      <div>
+        <h5>The pitch</h5>
+        <ul>
+          <li><a href="problem.html">Problem</a></li>
+          <li><a href="market.html">Market</a></li>
+          <li><a href="product.html">Product</a></li>
+          <li><a href="technology.html">Technology</a></li>
+          <li><a href="economics.html">Economics</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>For investors</h5>
+        <ul>
+          <li><a href="tokenomics.html">Tokenomics</a></li>
+          <li><a href="roadmap.html">Roadmap</a></li>
+          <li><a href="competition.html">Competition</a></li>
+          <li><a href="invest.html">The Ask</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footnote">
+      <strong>Important:</strong> This website and the figures on it are a concept pitch for discussion only. It is <strong>not</strong> an offer to sell or a solicitation to buy any security, token, or investment, and is not legal, tax, accounting or financial advice. All financial figures are illustrative estimates and forward-looking statements, not forecasts or guarantees; actual results will differ. Any investment would be made only via definitive legal documentation, to eligible investors, in compliance with applicable law. Crypto, remittance and payment activity is heavily regulated and varies by country; appropriate licenses and qualified counsel are required before operating. “Setu” is a working name pending trademark clearance.
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
