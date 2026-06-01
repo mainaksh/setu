@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Setu — The rails for the world's largest money corridor</title>
+<meta name="description" content="Setu is a stablecoin-powered remittance and merchant-settlement network. Sub-1% transfers, instant settlement, zero crypto knowledge required. Investor overview." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,400..700&family=Hanken+Grotesk:wght@300..800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* page-local flourishes for the home hero */
+  .home-hero{padding:90px 0 36px}
+  .home-hero .badge{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line-strong);
+    padding:7px 15px;border-radius:30px;font-size:13px;color:var(--cream-dim)}
+  .home-hero .badge .live{width:8px;height:8px;border-radius:50%;background:var(--jade);box-shadow:0 0 0 4px rgba(70,194,142,.18)}
+  .heroflex{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+  @media(max-width:920px){.heroflex{grid-template-columns:1fr}}
+  .phone{width:100%;max-width:300px;margin:0 auto;border:1px solid var(--line-strong);border-radius:34px;
+    background:linear-gradient(180deg,#11163b,#0a0d24);padding:16px 14px 22px;box-shadow:var(--shadow)}
+  .phone .scr{border-radius:22px;background:#0c0f2c;border:1px solid var(--line);overflow:hidden}
+  .phone .topbar{display:flex;justify-content:space-between;padding:12px 14px;font-size:11px;color:var(--cream-dim)}
+  .phone .send{padding:6px 18px 20px;text-align:center}
+  .phone .send .amt{font-family:"Fraunces";font-size:40px;color:var(--cream);font-weight:600}
+  .phone .send .amt small{font-size:18px;color:var(--cream-dim)}
+  .phone .arrowdrop{margin:14px auto;width:30px;height:30px;border-radius:50%;background:rgba(232,163,61,.16);
+    display:flex;align-items:center;justify-content:center;color:var(--saffron)}
+  .phone .recv{background:rgba(70,194,142,.1);border:1px solid rgba(70,194,142,.3);border-radius:14px;padding:12px;margin:0 12px}
+  .phone .recv b{font-family:"Fraunces";color:var(--jade);font-size:22px}
+  .phone .feebar{display:flex;justify-content:space-between;font-size:11px;color:var(--cream-dim);padding:14px 14px 4px}
+  .phone .cta{margin:14px 12px 4px;background:var(--saffron);color:#241500;text-align:center;padding:12px;border-radius:12px;font-weight:700;font-size:14px}
+  .thesis{font-family:"Fraunces";font-size:clamp(24px,3.2vw,34px);line-height:1.32;font-weight:420;max-width:24ch}
+  .beat{display:flex;gap:18px;align-items:flex-start}
+  .beat .bnum{font-family:"Fraunces";font-size:15px;color:var(--ink);background:var(--saffron);
+    min-width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;margin-top:3px}
+  .why{border:1px solid var(--line);border-radius:var(--r);padding:26px;background:var(--panel);position:relative;overflow:hidden}
+  .why .tide{position:absolute;right:-30px;bottom:-30px;font-size:120px;opacity:.06;font-family:"Fraunces"}
+  .askcard{background:linear-gradient(135deg, rgba(232,163,61,.16), rgba(70,194,142,.08));
+    border:1px solid var(--saffron-deep);border-radius:22px;padding:40px}
+  .miles{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+  .miles>div{background:var(--ink);padding:22px}
+  .miles .dot{width:10px;height:10px;border-radius:50%;background:var(--jade);display:inline-block;margin-bottom:10px}
+  .miles .dot.next{background:var(--saffron)}
+  .miles h4{margin:0 0 4px;font-size:16px}
+  .miles p{margin:0;font-size:13.5px;color:var(--cream-dim)}
+  @media(max-width:720px){.miles{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV (shared across all tabs) ============ -->
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <svg width="26" height="26" viewBox="0 0 26 26"><path d="M2 18 C8 6, 18 6, 24 18" stroke="#E8A33D" stroke-width="2.4" fill="none" stroke-linecap="round"/><circle cx="2" cy="18" r="2.6" fill="#46C28E"/><circle cx="24" cy="18" r="2.6" fill="#46C28E"/></svg>
+      Setu
+    </a>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="problem.html">Problem</a>
+      <a href="market.html">Market</a>
+      <a href="product.html">Product</a>
+      <a href="technology.html">Technology</a>
+      <a href="economics.html">Economics</a>
+      <a href="tokenomics.html">Token</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="competition.html">Competition</a>
+      <a href="invest.html">Invest</a>
+    </nav>
+    <a class="btn solid sm navcta" href="invest.html">The Ask →</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<div class="home-hero">
+  <div class="wrap">
+    <div class="badge"><span class="live"></span> Pre-seed · building the UAE → India corridor first</div>
+    <div class="heroflex mt-s">
+      <div>
+        <h1>The rails for the world's<br><span class="it">largest money corridor.</span></h1>
+        <p class="lede">Setu moves money home in <strong>seconds</strong> for <strong>under 1%</strong> — powered by regulated stablecoins, but built so the person sending it never has to know what a blockchain is.</p>
+        <div class="ctarow">
+          <a class="btn solid" href="invest.html">See the opportunity →</a>
+          <a class="btn ghost" href="product.html">How it works</a>
+        </div>
+        <div class="trustrow">
+          <span>Domiciled in Abu Dhabi (ADGM)</span><span class="dotsep"></span>
+          <span>Regulated-stablecoin settlement</span><span class="dotsep"></span>
+          <span>Licensed payout partners</span>
+        </div>
+      </div>
+
+      <!-- product glimpse -->
+      <div>
+        <div class="phone">
+          <div class="scr">
+            <div class="topbar"><span>9:41</span><span>Setu</span><span>🔋</span></div>
+            <div class="send">
+              <div style="font-size:12px;color:var(--cream-dim)">You send</div>
+              <div class="amt">AED 1,000</div>
+              <div class="arrowdrop">↓</div>
+            </div>
+            <div class="recv">
+              <div style="font-size:11px;color:var(--cream-dim)">Family receives</div>
+              <b>₹ 22,640</b>
+              <div style="font-size:11px;color:var(--jade);margin-top:2px">arrives in ~8 seconds</div>
+            </div>
+            <div class="feebar"><span>Fee &amp; FX</span><span style="color:var(--jade)">AED 8.80 · 0.88%</span></div>
+            <div class="feebar" style="padding-top:0"><span>Bank would take</span><span style="color:var(--rose)">~AED 64</span></div>
+            <div class="cta">Send money →</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="statband mt-l rv">
+      <div><b>$905B</b><span>Global remittances a year — and the fees on them are a tax on the poor</span></div>
+      <div><b class="jade">&lt;1%</b><span>Setu's all-in cost vs the 6.3% global average fee</span></div>
+      <div><b class="sky">$135B+</b><span>Sent into India yearly — the single largest receiving market on earth</span></div>
+      <div><b>~76%</b><span>Of all crypto payment volume is already stablecoins — the rail is proven</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ ONE-SENTENCE PITCH ============ -->
+<section>
+  <div class="wrap center rv" style="max-width:920px">
+    <div class="eyebrow">The whole company in one sentence</div>
+    <p class="thesis center mt-s" style="max-width:30ch">Setu is <mark>Wise-grade pricing on a stablecoin rail</mark>, aimed squarely at the Gulf → South Asia corridor, with the crypto hidden so completely that the customer just sees money arrive.</p>
+  </div>
+</section>
+
+<!-- ============ PROBLEM → SOLUTION (3 beats) ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker rv">Why we exist</div>
+    <h2 class="big rv">A 6% tax on people who can least afford it.</h2>
+    <p class="sub rv">Migrant workers send a slice of every paycheck home. The middlemen — banks, correspondent networks, Western Union — quietly skim 5–7% and take days. We remove almost all of it.</p>
+
+    <div class="mt grid3">
+      <div class="card rv"><div class="num">01</div><h3>The pain is universal &amp; recurring</h3><p>A worker sending AED 1,000 monthly loses ~$17 every time — roughly <strong>$200 a year</strong>, forever. It's felt, repeated, and hated.</p></div>
+      <div class="card rv d1"><div class="num">02</div><h3>The rail finally exists</h3><p>Regulated stablecoins now settle value across borders in seconds for fractions of a cent. The expensive correspondent-bank chain is simply… deleted.</p></div>
+      <div class="card rv d2"><div class="num">03</div><h3>The trick is hiding it</h3><p>Every prior crypto-remittance attempt asked grandma to understand wallets. Setu's entire UX is "send money." The chain is an invisible engine.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY NOW ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker rv">Why now — three tailwinds converging</div>
+    <h2 class="big rv">This was impossible two years ago. It's inevitable now.</h2>
+    <div class="mt grid3">
+      <div class="why rv"><span class="tide">§</span><span class="tag">Regulation</span><h3 style="margin:14px 0 8px">Clear stablecoin law</h3><p style="color:#d4cab7">The US GENIUS Act and the EU's MiCA gave stablecoins a real legal home. The UAE's VARA &amp; ADGM offer explicit licensing. You can now build this <em>inside</em> the rules.</p></div>
+      <div class="why rv d1"><span class="tide">↗</span><span class="tag">Adoption</span><h3 style="margin:14px 0 8px">Emerging markets lead</h3><p style="color:#d4cab7">APAC is the fastest-growing region for on-chain activity, with India, Vietnam &amp; Pakistan driving it. The users are already here — they just need a product that hides the complexity.</p></div>
+      <div class="why rv d2"><span class="tide">⚡</span><span class="tag">Infrastructure</span><h3 style="margin:14px 0 8px">UX caught up</h3><p style="color:#d4cab7">Account abstraction, passkeys and embedded wallets killed seed phrases. A person can now use a stablecoin without ever seeing one — the missing piece for mass adoption.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS (teaser) ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker rv">How it works, in one glance</div>
+    <h2 class="big rv">Local money in. Local money out. Stablecoin in between.</h2>
+    <div class="flowwrap mt rv">
+      <div class="flowtitle"><span class="tag">THE CORE LOOP</span> Sender in Dubai → family in India</div>
+      <svg class="flow" viewBox="0 0 1120 200">
+        <defs><marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#c7bca6"/></marker></defs>
+        <rect class="nodeA" x="14" y="64" width="180" height="78" rx="12"/>
+        <text x="104" y="92" text-anchor="middle" class="lbl">📱 Pay in AED</text>
+        <text x="104" y="112" text-anchor="middle" class="sub">UPI · card · cash agent</text>
+        <text x="104" y="54" text-anchor="middle" class="step">1</text>
+        <path class="arrow" d="M198 103 H272" marker-end="url(#arr)"/>
+        <rect class="node" x="276" y="64" width="180" height="78" rx="12"/>
+        <text x="366" y="92" text-anchor="middle" class="lbl">🔁 → USDC</text>
+        <text x="366" y="112" text-anchor="middle" class="sub">auto-convert</text>
+        <text x="366" y="54" text-anchor="middle" class="step">2</text>
+        <path class="arrow" d="M460 103 H534" marker-end="url(#arr)"/>
+        <rect class="node" x="538" y="64" width="180" height="78" rx="12"/>
+        <text x="628" y="92" text-anchor="middle" class="lbl">🌐 Stablecoin rail</text>
+        <text x="628" y="112" text-anchor="middle" class="sub">crosses border · seconds</text>
+        <text x="628" y="54" text-anchor="middle" class="step">3</text>
+        <path class="arrow" d="M722 103 H796" marker-end="url(#arr)"/>
+        <rect class="node" x="800" y="64" width="160" height="78" rx="12"/>
+        <text x="880" y="92" text-anchor="middle" class="lbl">💱 LP → INR</text>
+        <text x="880" y="112" text-anchor="middle" class="sub">local payout</text>
+        <text x="880" y="54" text-anchor="middle" class="step">4</text>
+        <path class="arrow" d="M964 103 H1020 V168 H520" marker-end="url(#arr)"/>
+        <rect class="nodeG" x="320" y="150" width="196" height="40" rx="10"/>
+        <text x="418" y="175" text-anchor="middle" class="lbl">🏠 Family receives INR · &lt;1%</text>
+      </svg>
+    </div>
+    <div class="center mt-s"><a class="btn ghost" href="product.html">See the full product &amp; workflows →</a></div>
+  </div>
+</section>
+
+<!-- ============ TRACTION / MILESTONES ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker rv">Where we are</div>
+    <h2 class="big rv">Concept locked. Corridor chosen. Now we build.</h2>
+    <p class="sub rv">We're honest that this is early — that's the entry point for you. Here's the path from today to a live corridor.</p>
+    <div class="miles mt rv">
+      <div><span class="dot"></span><h4>Concept &amp; design</h4><p>Two-layer architecture, tokenomics and corridor strategy defined. Done.</p></div>
+      <div><span class="dot next"></span><h4>Legal &amp; entity</h4><p>ADGM foundation, counsel, AML program, banking + payout partners. Next.</p></div>
+      <div><span class="dot next"></span><h4>MVP corridor</h4><p>UAE → India live with first 1,000 real senders. Month 3–6.</p></div>
+      <div><span class="dot next"></span><h4>Liquidity network</h4><p>SETU staking opens the LP/agent flywheel. Month 6–12.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE ASK (teaser) ============ -->
+<section>
+  <div class="wrap">
+    <div class="askcard rv">
+      <div class="grid2" style="align-items:center;gap:40px">
+        <div>
+          <div class="eyebrow">The opportunity</div>
+          <h2 class="big" style="margin:12px 0">A take-rate business on a $135B flow.</h2>
+          <p class="sub">Capture even a fraction of a percent of one corridor and the unit economics are extraordinary — recurring, software-margin revenue on money that <em>already</em> moves every month. We're raising a pre-seed to get to a live, measurable corridor.</p>
+          <a class="btn solid mt-s" href="invest.html">Read the full investment case →</a>
+        </div>
+        <div class="grid2" style="gap:14px">
+          <div class="kpi"><b>$1.5M</b><span>Pre-seed target to reach a live corridor &amp; first 10k users</span></div>
+          <div class="kpi"><b class="jade">18 mo</b><span>Runway to proven corridor economics</span></div>
+          <div class="kpi"><b class="sky">$135B</b><span>India inbound remittance flow we sit on top of</span></div>
+          <div class="kpi"><b>&lt;1%</b><span>Our price vs 6.3% incumbents — a structural moat</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VISION CLOSE ============ -->
+<section>
+  <div class="wrap center rv" style="max-width:840px">
+    <div class="quote center" style="max-width:24ch;margin:0 auto">"A bridge for money, and for the people on both ends of it."
+      <span class="by">— the meaning of <em>setu</em>, सेतु</span>
+    </div>
+    <p class="sub center mt" style="max-width:600px">Remittances are love, sent in money. The fee is the tollbooth on that love. We're here to tear it down — and build a durable, regulated business doing it.</p>
+    <div class="ctarow" style="justify-content:center"><a class="btn solid" href="invest.html">The Ask →</a><a class="btn ghost" href="market.html">The Market →</a></div>
+  </div>
+</section>
+
+<!-- ============ FOOTER (shared) ============ -->
+<footer>
+  <div class="wrap">
+    <div class="footgrid">
+      <div>
+        <div class="foothead">Setu</div>
+        <p style="max-width:340px">Stablecoin rails for the world's biggest money corridor. Local money in, local money out, the crypto kept invisible.</p>
+      </div>
+      <div>
+        <h5>The pitch</h5>
+        <ul>
+          <li><a href="problem.html">Problem</a></li>
+          <li><a href="market.html">Market</a></li>
+          <li><a href="product.html">Product</a></li>
+          <li><a href="technology.html">Technology</a></li>
+          <li><a href="economics.html">Economics</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>For investors</h5>
+        <ul>
+          <li><a href="tokenomics.html">Tokenomics</a></li>
+          <li><a href="roadmap.html">Roadmap</a></li>
+          <li><a href="competition.html">Competition</a></li>
+          <li><a href="invest.html">The Ask</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footnote">
+      “Setu” is a working name (Sanskrit / Hindi: <em>सेतु</em>, “bridge”) — verify trademark availability before use. This website is a concept pitch and is <strong>not</strong> an offer to sell securities, an investment solicitation, or legal, tax, or financial advice. Figures shown are illustrative targets, not guarantees. Crypto, remittance and payment activity is heavily regulated and varies by country; qualified counsel and the appropriate licenses are required before operating.
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

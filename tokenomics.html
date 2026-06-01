@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Setu — Tokenomics · SETU is the network's coordination layer</title>
+<meta name="description" content="The SETU token: a utility and governance token that coordinates and rewards the liquidity providers and agents who run the network — not a stablecoin, not a retail speculation pitch." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,400..700&family=Hanken+Grotesk:wght@300..800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .tok-hero{padding:78px 0 30px}
+  .tok-hero h1{font-size:clamp(40px,6.4vw,76px);margin:.2em 0 .28em;font-weight:600;letter-spacing:-.02em}
+  .tok-hero h1 .it{font-style:italic;color:var(--saffron)}
+  .isnot{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-top:28px}
+  @media(max-width:680px){.isnot{grid-template-columns:1fr}}
+  .isnot>div{padding:26px}
+  .isnot .is{background:rgba(70,194,142,.07);border-right:1px solid var(--line)}
+  .isnot .not{background:rgba(224,106,106,.06)}
+  .isnot h4{margin:0 0 14px;font-size:15px;letter-spacing:.04em;text-transform:uppercase}
+  .isnot .is h4{color:var(--jade)}.isnot .not h4{color:var(--rose)}
+  .isnot ul{margin:0;padding:0;list-style:none}
+  .isnot li{padding:8px 0;font-size:14.5px;color:#d4cab7;display:flex;gap:9px}
+  /* allocation */
+  .alloc{display:grid;grid-template-columns:240px 1fr;gap:36px;margin-top:30px;align-items:center}
+  @media(max-width:680px){.alloc{grid-template-columns:1fr;justify-items:center}}
+  .legend{margin:0;padding:0;list-style:none}
+  .legend li{display:flex;align-items:flex-start;gap:11px;padding:8px 0;font-size:15px;color:#d4cab7}
+  .legend .dot{width:14px;height:14px;border-radius:4px;flex:none;margin-top:5px}
+  .legend b{color:#fff}
+  .supply{text-align:center;border:1px solid var(--line);border-radius:14px;padding:18px;background:var(--panel);margin-top:8px}
+  .supply b{font-family:"Fraunces";font-size:30px;color:var(--saffron);display:block}
+  /* vesting bars */
+  .vest{margin-top:24px;display:grid;gap:12px}
+  .vrow{display:grid;grid-template-columns:170px 1fr;gap:14px;align-items:center}
+  @media(max-width:680px){.vrow{grid-template-columns:120px 1fr}}
+  .vrow .lab{font-size:13.5px;color:var(--cream-dim)}
+  .vtrack{height:24px;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:7px;position:relative;overflow:hidden}
+  .vtrack .cliff{position:absolute;top:0;bottom:0;background:repeating-linear-gradient(45deg,rgba(224,106,106,.25),rgba(224,106,106,.25) 6px,transparent 6px,transparent 12px)}
+  .vtrack .lin{position:absolute;top:0;bottom:0;background:linear-gradient(90deg,var(--jade),var(--saffron));opacity:.55}
+  .vaxis{display:grid;grid-template-columns:170px 1fr;gap:14px;font-family:"JetBrains Mono";font-size:11px;color:var(--cream-faint)}
+  @media(max-width:680px){.vaxis{grid-template-columns:120px 1fr}}
+  .vaxis .ticks{display:flex;justify-content:space-between}
+  .util{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:28px}
+  @media(max-width:760px){.util{grid-template-columns:1fr}}
+  .util .u{border:1px solid var(--line);border-radius:14px;padding:22px;background:var(--panel)}
+  .util .u .ic{font-size:24px}
+  .util .u h3{margin:8px 0 6px;font-size:18px}
+  .util .u p{margin:0;font-size:14.5px;color:#d4cab7}
+  .src{font-size:12px;color:var(--cream-faint);margin-top:12px}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <svg width="26" height="26" viewBox="0 0 26 26"><path d="M2 18 C8 6, 18 6, 24 18" stroke="#E8A33D" stroke-width="2.4" fill="none" stroke-linecap="round"/><circle cx="2" cy="18" r="2.6" fill="#46C28E"/><circle cx="24" cy="18" r="2.6" fill="#46C28E"/></svg>
+      Setu
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="problem.html">Problem</a>
+      <a href="market.html">Market</a>
+      <a href="product.html">Product</a>
+      <a href="technology.html">Technology</a>
+      <a href="economics.html">Economics</a>
+      <a href="tokenomics.html" class="active">Token</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="competition.html">Competition</a>
+      <a href="invest.html">Invest</a>
+    </nav>
+    <a class="btn solid sm navcta" href="invest.html">The Ask →</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<div class="tok-hero">
+  <div class="wrap">
+    <div class="eyebrow">Tokenomics</div>
+    <h1>SETU is the network's<br><span class="it">coordination layer.</span></h1>
+    <p class="lede">It is not a stablecoin, and it is not a get-rich pitch aimed at the people sending money home. SETU exists to coordinate, secure, and reward the liquidity providers and agents who make the rail run — its value tracks real network usage, not hype.</p>
+  </div>
+</div>
+
+<!-- ============ WHAT IT IS / ISN'T ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker rv">First, the honesty</div>
+    <h2 class="big rv">What SETU is — and deliberately is not.</h2>
+    <p class="sub rv">The cleanest tokenomics start by being clear about what the token is for. This separation is both good design and good compliance.</p>
+
+    <div class="isnot rv">
+      <div class="is">
+        <h4>✓ SETU is</h4>
+        <ul>
+          <li>✓ A utility token: staked by liquidity providers for the right to serve flow</li>
+          <li>✓ A governance token: holders vote on network parameters and treasury</li>
+          <li>✓ An incentive: rewards LPs, agents and ecosystem contributors</li>
+          <li>✓ Value-linked to real usage — more flow needs more staked liquidity</li>
+        </ul>
+      </div>
+      <div class="not">
+        <h4>✕ SETU is not</h4>
+        <ul>
+          <li>✕ A stablecoin — value moves over regulated USDC, not SETU</li>
+          <li>✕ Something a sender ever needs to buy, hold, or understand</li>
+          <li>✕ Marketed to retail as an investment or a promise of returns</li>
+          <li>✕ A substitute for revenue — the business earns fees regardless</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note rv">A grandmother sending ₹22,640 home will never see the word "SETU." The token lives entirely in the operator layer — which is exactly why adoption isn't gated on anyone speculating.</div>
+  </div>
+</section>
+
+<!-- ============ UTILITY ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker rv">The four jobs SETU does</div>
+    <h2 class="big rv">Every token has to earn its place. Here's how SETU earns its.</h2>
+    <div class="util rv">
+      <div class="u"><span class="ic">💧</span><h3>1 · Stake for liquidity rights</h3><p>Liquidity providers stake SETU to gain the right to fill payouts and earn transaction fees. More network flow demands more staked liquidity — creating organic, usage-driven demand for the token.</p></div>
+      <div class="u"><span class="ic">🏷️</span><h3>2 · Fee rebates &amp; alignment</h3><p>Operators and high-volume partners holding SETU receive fee rebates, aligning the people who run the rail with the network's long-term health.</p></div>
+      <div class="u"><span class="ic">🗳️</span><h3>3 · Governance</h3><p>Holders vote on corridor parameters, fee schedules, treasury allocation, and which markets to open next — progressively decentralizing control.</p></div>
+      <div class="u"><span class="ic">🎁</span><h3>4 · Incentives &amp; rewards</h3><p>Agents, early liquidity, and ecosystem builders are rewarded in SETU, bootstrapping the network effects that make the rail cheap and reliable.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VALUE ACCRUAL FLYWHEEL ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker rv">Value accrual</div>
+    <h2 class="big rv">Token value should track usage. Here's the loop that makes it.</h2>
+    <p class="sub rv">As real transfer volume grows, more local-currency liquidity is needed; serving that flow requires staking SETU; and a share of network fees can be directed to a buyback-and-distribute or burn mechanism — tying token demand to the actual business, not narrative.</p>
+
+    <div class="flowwrap mt rv">
+      <div class="flowtitle"><span class="tag">THE FLYWHEEL</span> Usage → staking demand → tighter spreads → more usage</div>
+      <svg class="flow" viewBox="0 0 1120 300">
+        <defs><marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#c7bca6"/></marker></defs>
+        <rect class="nodeA" x="430" y="20" width="260" height="56" rx="12"/>
+        <text x="560" y="44" text-anchor="middle" class="lbl">📈 More transfer volume</text>
+        <text x="560" y="62" text-anchor="middle" class="sub">more money flowing through the rail</text>
+
+        <rect class="node" x="800" y="120" width="250" height="56" rx="12"/>
+        <text x="925" y="144" text-anchor="middle" class="lbl">💧 More liquidity needed</text>
+        <text x="925" y="162" text-anchor="middle" class="sub">LPs must serve the demand</text>
+
+        <rect class="nodeG" x="800" y="224" width="250" height="56" rx="12"/>
+        <text x="925" y="248" text-anchor="middle" class="lbl">🪙 More SETU staked</text>
+        <text x="925" y="266" text-anchor="middle" class="sub">+ fee-linked buyback / burn</text>
+
+        <rect class="node" x="70" y="224" width="250" height="56" rx="12"/>
+        <text x="195" y="248" text-anchor="middle" class="lbl">🤝 Deeper LP competition</text>
+        <text x="195" y="266" text-anchor="middle" class="sub">more providers join</text>
+
+        <rect class="node" x="70" y="120" width="250" height="56" rx="12"/>
+        <text x="195" y="144" text-anchor="middle" class="lbl">⬇️ Tighter spreads</text>
+        <text x="195" y="162" text-anchor="middle" class="sub">cheaper, better than rivals</text>
+
+        <path class="arrow" d="M690 54 H940 V118" marker-end="url(#arr)"/>
+        <path class="arrow" d="M925 178 V222" marker-end="url(#arr)"/>
+        <path class="arrow" d="M800 252 H322" marker-end="url(#arr)"/>
+        <path class="arrow" d="M195 222 V178" marker-end="url(#arr)"/>
+        <path class="arrow" d="M195 118 V72 H428" marker-end="url(#arr)"/>
+      </svg>
+    </div>
+    <div class="note rv"><strong>The point:</strong> token demand is anchored to the volume of real money moving through Setu. If the business works, the token has a reason to exist; if it doesn't, no amount of tokenomics would have saved it. Revenue first, token second.</div>
+    <p class="src">Specific value-accrual mechanisms (staking yields, buyback/burn, fee-share) are draft and subject to legal, tax and regulatory review before any implementation.</p>
+  </div>
+</section>
+
+<!-- ============ ALLOCATION ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker rv">Allocation</div>
+    <h2 class="big rv">Fixed supply, weighted toward building the network.</h2>
+    <div class="alloc rv">
+      <div>
+        <svg viewBox="0 0 42 42" width="220" height="220" aria-label="Token allocation donut">
+          <circle cx="21" cy="21" r="15.9" fill="none" stroke="#46C28E" stroke-width="9" stroke-dasharray="35 65" stroke-dashoffset="25"/>
+          <circle cx="21" cy="21" r="15.9" fill="none" stroke="#E8A33D" stroke-width="9" stroke-dasharray="25 75" stroke-dashoffset="-10"/>
+          <circle cx="21" cy="21" r="15.9" fill="none" stroke="#5BA8D8" stroke-width="9" stroke-dasharray="20 80" stroke-dashoffset="-35"/>
+          <circle cx="21" cy="21" r="15.9" fill="none" stroke="#c47e1d" stroke-width="9" stroke-dasharray="12 88" stroke-dashoffset="-55"/>
+          <circle cx="21" cy="21" r="15.9" fill="none" stroke="#c7bca6" stroke-width="9" stroke-dasharray="8 92" stroke-dashoffset="-67"/>
+        </svg>
+        <div class="supply"><span style="font-size:12px;color:var(--cream-dim)">FIXED TOTAL SUPPLY</span><b>1,000,000,000</b><span style="font-size:12px;color:var(--cream-dim)">SETU · no inflation beyond schedule</span></div>
+      </div>
+      <ul class="legend">
+        <li><span class="dot" style="background:#46C28E"></span><span><b>35% · Liquidity &amp; agent rewards (350M).</b> Emitted on a decaying schedule over ~5 years to bootstrap and sustain the LP flywheel.</span></li>
+        <li><span class="dot" style="background:#E8A33D"></span><span><b>25% · Ecosystem &amp; growth (250M).</b> Corridor launches, merchant onboarding, referrals, partnerships.</span></li>
+        <li><span class="dot" style="background:#5BA8D8"></span><span><b>20% · Team &amp; advisors (200M).</b> 4-year vest with a 1-year cliff — long-term alignment, no early dumps.</span></li>
+        <li><span class="dot" style="background:#c47e1d"></span><span><b>12% · Treasury &amp; reserve (120M).</b> Governed on-chain for runway, stability and contingencies.</span></li>
+        <li><span class="dot" style="background:#c7bca6"></span><span><b>8% · Community &amp; public (80M).</b> Fair, capped distribution where legally permitted.</span></li>
+      </ul>
+    </div>
+    <p class="src">Illustrative draft allocation. Final supply, splits and mechanics are subject to legal/regulatory review and may differ. Token may not be offered or sold in certain jurisdictions or to certain persons.</p>
+  </div>
+</section>
+
+<!-- ============ VESTING ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker rv">Vesting &amp; emissions</div>
+    <h2 class="big rv">No cliffs to dump on. Incentives that unlock slowly.</h2>
+    <p class="sub rv">A credible token has long lockups for insiders and gradual emissions for rewards — so supply enters in step with real network growth, not in a flood.</p>
+
+    <div class="vest rv">
+      <div class="vrow"><span class="lab">Team &amp; advisors</span><div class="vtrack"><span class="cliff" style="left:0;width:25%"></span><span class="lin" style="left:25%;width:75%"></span></div></div>
+      <div class="vrow"><span class="lab">Liquidity rewards</span><div class="vtrack"><span class="lin" style="left:0;width:100%"></span></div></div>
+      <div class="vrow"><span class="lab">Ecosystem &amp; growth</span><div class="vtrack"><span class="lin" style="left:5%;width:90%"></span></div></div>
+      <div class="vrow"><span class="lab">Treasury</span><div class="vtrack"><span class="lin" style="left:10%;width:85%"></span></div></div>
+      <div class="vrow"><span class="lab">Community</span><div class="vtrack"><span class="lin" style="left:0;width:40%;opacity:.7"></span></div></div>
+      <div class="vaxis"><span></span><div class="ticks"><span>TGE</span><span>Yr 1</span><span>Yr 2</span><span>Yr 3</span><span>Yr 4</span><span>Yr 5</span></div></div>
+    </div>
+    <div class="note good rv">Striped = cliff (locked); solid = gradual linear release. Team tokens are fully locked for a year, then bleed out over three more — investors and the market can trust nobody's heading for the exit early.</div>
+  </div>
+</section>
+
+<!-- ============ GOVERNANCE ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker rv">Governance</div>
+    <h2 class="big rv">Progressively handing the keys to the network.</h2>
+    <div class="mt grid3">
+      <div class="card rv"><span class="ic">🛣️</span><h3>Corridor decisions</h3><p>Which markets to open next, and the parameters (limits, partner standards) that govern each.</p></div>
+      <div class="card rv d1"><span class="ic">⚖️</span><h3>Fees &amp; rewards</h3><p>Fee schedules, LP reward rates, and how network revenue is recycled back into the ecosystem.</p></div>
+      <div class="card rv d2"><span class="ic">🏛️</span><h3>Treasury</h3><p>On-chain treasury allocation — grants, security, liquidity backstops — under holder oversight.</p></div>
+    </div>
+    <div class="note rv">Governance decentralizes over time, not on day one. Early on, a clear team steers; as the network matures and proves itself, control progressively moves to token holders.</div>
+  </div>
+</section>
+
+<!-- ============ COMPLIANCE FRAMING ============ -->
+<section>
+  <div class="wrap rv" style="max-width:900px">
+    <div class="kicker">Why this design is the safe one</div>
+    <h2 class="big">Utility-first, retail-protected, revenue-backed.</h2>
+    <p class="sub">By keeping value movement on a regulated stablecoin and confining SETU to the operator layer, the design avoids the two traps that sink token projects: dependence on speculation, and selling a token that behaves like an unregistered security to retail users. The business stands on fee revenue; the token coordinates the network on top of it.</p>
+    <div class="note risk">Token structures carry real legal risk and vary sharply by jurisdiction. Everything here is a draft concept and <strong>not</strong> an offer, solicitation, or promise. A token would only ever be issued after thorough legal, tax and securities review, with appropriate jurisdictional restrictions — and possibly not at all if the business is better served without one.</div>
+    <div class="ctarow"><a class="btn solid" href="roadmap.html">The roadmap →</a><a class="btn ghost" href="invest.html">The Ask →</a></div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="footgrid">
+      <div>
+        <div class="foothead">Setu</div>
+        <p style="max-width:340px">Stablecoin rails for the world's biggest money corridor. Local money in, local money out, the crypto kept invisible.</p>
+      </div>
+      <div>
+        <h5>The pitch</h5>
+        <ul>
+          <li><a href="problem.html">Problem</a></li>
+          <li><a href="market.html">Market</a></li>
+          <li><a href="product.html">Product</a></li>
+          <li><a href="technology.html">Technology</a></li>
+          <li><a href="economics.html">Economics</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>For investors</h5>
+        <ul>
+          <li><a href="tokenomics.html">Tokenomics</a></li>
+          <li><a href="roadmap.html">Roadmap</a></li>
+          <li><a href="competition.html">Competition</a></li>
+          <li><a href="invest.html">The Ask</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footnote">
+      Tokenomics described here are an early-stage draft concept, illustrative only, and subject to material change after legal, tax and regulatory review. Nothing on this page is an offer to sell or solicitation to buy any token or security, nor investment, legal, tax or financial advice. A token may not be issued at all, and if issued would carry jurisdictional and eligibility restrictions. Appropriate licenses and qualified counsel are required before operating.
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

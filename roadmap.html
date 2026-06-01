@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Setu — Roadmap · From concept to a live corridor</title>
+<meta name="description" content="The Setu roadmap: a phased plan from legal foundations to a live UAE→India corridor to a multi-corridor platform — with the specific risk each phase removes." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,400..700&family=Hanken+Grotesk:wght@300..800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .rm-hero{padding:78px 0 30px}
+  .rm-hero h1{font-size:clamp(40px,6.4vw,76px);margin:.2em 0 .28em;font-weight:600;letter-spacing:-.02em}
+  .rm-hero h1 .it{font-style:italic;color:var(--saffron)}
+  /* de-risk ladder */
+  .ladder{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:30px}
+  @media(max-width:900px){.ladder{grid-template-columns:1fr 1fr}}
+  .ladder .rung{border:1px solid var(--line);border-radius:14px;padding:18px;background:var(--panel);position:relative}
+  .ladder .rung .ph{font-family:"JetBrains Mono";font-size:11px;color:var(--saffron);letter-spacing:.08em}
+  .ladder .rung h4{margin:8px 0 6px;font-size:15px}
+  .ladder .rung p{margin:0;font-size:13px;color:var(--cream-dim)}
+  .ladder .rung .kill{margin-top:12px;font-size:11.5px;color:var(--jade);border-top:1px solid var(--line);padding-top:10px}
+  /* big phase blocks */
+  .pblock{border:1px solid var(--line);border-radius:var(--r);padding:28px;background:var(--panel);margin-top:18px}
+  .pblock .head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:10px;border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:16px}
+  .pblock .head h3{font-size:24px;margin:0}
+  .pblock .head .when{font-family:"JetBrains Mono";font-size:13px;color:var(--jade)}
+  .pblock .cols{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  @media(max-width:680px){.pblock .cols{grid-template-columns:1fr}}
+  .pblock h5{font-family:"Hanken Grotesk";text-transform:uppercase;letter-spacing:.12em;font-size:11px;color:var(--cream-faint);margin:0 0 8px}
+  .pblock ul{margin:0;padding:0;list-style:none}
+  .pblock li{padding:5px 0;font-size:14px;color:#d4cab7;display:flex;gap:9px}
+  .pblock li:before{content:"▸";color:var(--saffron)}
+  .pblock .gate{margin-top:16px;background:rgba(232,163,61,.08);border-left:3px solid var(--saffron);padding:12px 16px;border-radius:0 10px 10px 0;font-size:13.5px;color:#e6dcc9}
+  .pblock.live{border-color:var(--jade-deep)}
+  .pblock.live .head h3:after{content:" ● NEXT";color:var(--jade);font-family:"JetBrains Mono";font-size:12px;vertical-align:middle}
+  /* risk register */
+  .risks{margin-top:24px;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+  .risks table td,.risks table th{vertical-align:top}
+  .sev{font-family:"JetBrains Mono";font-size:11px;padding:3px 9px;border-radius:20px}
+  .sev.h{background:rgba(224,106,106,.16);color:var(--rose)}
+  .sev.m{background:rgba(232,163,61,.16);color:var(--saffron)}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <svg width="26" height="26" viewBox="0 0 26 26"><path d="M2 18 C8 6, 18 6, 24 18" stroke="#E8A33D" stroke-width="2.4" fill="none" stroke-linecap="round"/><circle cx="2" cy="18" r="2.6" fill="#46C28E"/><circle cx="24" cy="18" r="2.6" fill="#46C28E"/></svg>
+      Setu
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="problem.html">Problem</a>
+      <a href="market.html">Market</a>
+      <a href="product.html">Product</a>
+      <a href="technology.html">Technology</a>
+      <a href="economics.html">Economics</a>
+      <a href="tokenomics.html">Token</a>
+      <a href="roadmap.html" class="active">Roadmap</a>
+      <a href="competition.html">Competition</a>
+      <a href="invest.html">Invest</a>
+    </nav>
+    <a class="btn solid sm navcta" href="invest.html">The Ask →</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<div class="rm-hero">
+  <div class="wrap">
+    <div class="eyebrow">Roadmap</div>
+    <h1>From concept to a live corridor —<br><span class="it">de-risking at every step.</span></h1>
+    <p class="lede">We don't ask anyone to believe in a five-year leap. Each phase is designed to remove one specific category of risk, so capital is only put at greater stake once the prior risk is retired. Here's the ladder.</p>
+  </div>
+</div>
+
+<!-- ============ DE-RISK LADDER ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker rv">The de-risking ladder</div>
+    <h2 class="big rv">Each phase kills a different risk.</h2>
+    <p class="sub rv">Investors aren't buying a finished company — they're buying a sequence of risks being retired in the right order. Regulatory first, because nothing else matters if that fails.</p>
+
+    <div class="ladder rv">
+      <div class="rung"><div class="ph">PHASE 0</div><h4>Legal &amp; entity</h4><p>Can this be built compliantly at all?</p><div class="kill">✓ Kills regulatory risk</div></div>
+      <div class="rung"><div class="ph">PHASE 1</div><h4>MVP corridor</h4><p>Will real people actually use it?</p><div class="kill">✓ Kills product risk</div></div>
+      <div class="rung"><div class="ph">PHASE 2</div><h4>Liquidity network</h4><p>Can liquidity scale without us?</p><div class="kill">✓ Kills liquidity risk</div></div>
+      <div class="rung"><div class="ph">PHASE 3</div><h4>Merchant loop</h4><p>Do the unit economics hold?</p><div class="kill">✓ Kills margin risk</div></div>
+      <div class="rung"><div class="ph">PHASE 4</div><h4>Multi-corridor</h4><p>Does the playbook replicate?</p><div class="kill">✓ Kills scale risk</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PHASE DETAIL ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker rv">The phases in detail</div>
+    <h2 class="big rv">What actually happens, and when.</h2>
+
+    <!-- Phase 0 -->
+    <div class="pblock rv">
+      <div class="head"><h3>Phase 0 · Legal &amp; foundations</h3><span class="when">WEEKS 0–12</span></div>
+      <div class="cols">
+        <div>
+          <h5>Goals</h5>
+          <ul>
+            <li>Incorporate the ADGM entity in Abu Dhabi</li>
+            <li>Engage crypto/payments counsel in UAE + India</li>
+            <li>Design the AML/KYC compliance program</li>
+            <li>Sign stablecoin, banking &amp; India payout partners (LOIs)</li>
+          </ul>
+        </div>
+        <div>
+          <h5>What gets de-risked</h5>
+          <ul>
+            <li>Confirms a legal, licensable path exists</li>
+            <li>Locks the jurisdiction &amp; corporate structure</li>
+            <li>Secures the partners the whole model depends on</li>
+          </ul>
+        </div>
+      </div>
+      <div class="gate"><strong>Gate to Phase 1:</strong> counsel sign-off on the operating model, entity live, and at least one binding payout-partner agreement in place.</div>
+    </div>
+
+    <!-- Phase 1 -->
+    <div class="pblock live rv">
+      <div class="head"><h3>Phase 1 · MVP corridor (UAE → India)</h3><span class="when">MONTHS 3–6</span></div>
+      <div class="cols">
+        <div>
+          <h5>Goals</h5>
+          <ul>
+            <li>Ship the sender app (iOS + Android)</li>
+            <li>Cash-in in the UAE; USDC rail; payout to India via partner</li>
+            <li>Onboard the first 1,000 real senders</li>
+            <li>Liquidity handled manually / by a single partner at first</li>
+          </ul>
+        </div>
+        <div>
+          <h5>What gets de-risked</h5>
+          <ul>
+            <li>Proves real people send real money repeatedly</li>
+            <li>Validates the &lt;1% price and instant settlement live</li>
+            <li>Generates first cohort retention &amp; CAC data</li>
+          </ul>
+        </div>
+      </div>
+      <div class="gate"><strong>Gate to Phase 2:</strong> demonstrable repeat usage (a real retention curve), settlement reliably under target time &amp; cost, and clean compliance operations.</div>
+    </div>
+
+    <!-- Phase 2 -->
+    <div class="pblock rv">
+      <div class="head"><h3>Phase 2 · Liquidity network + SETU utility</h3><span class="when">MONTHS 6–12</span></div>
+      <div class="cols">
+        <div>
+          <h5>Goals</h5>
+          <ul>
+            <li>Open the LP/agent program with SETU staking</li>
+            <li>Routing engine auto-matches transfers to cheapest LP</li>
+            <li>Cash-in/out agent network in key UAE locations</li>
+            <li>Scale toward tens of thousands of active senders</li>
+          </ul>
+        </div>
+        <div>
+          <h5>What gets de-risked</h5>
+          <ul>
+            <li>Liquidity scales without Setu fronting all the float</li>
+            <li>Spreads tighten as LPs compete — better price &amp; margin</li>
+            <li>Proves the network can grow beyond a single operator</li>
+          </ul>
+        </div>
+      </div>
+      <div class="gate"><strong>Gate to Phase 3:</strong> majority of payouts filled by third-party LPs, spreads trending down, agent network functioning.</div>
+    </div>
+
+    <!-- Phase 3 -->
+    <div class="pblock rv">
+      <div class="head"><h3>Phase 3 · Merchant acceptance loop</h3><span class="when">MONTHS 12–18</span></div>
+      <div class="cols">
+        <div>
+          <h5>Goals</h5>
+          <ul>
+            <li>QR payments at local shops in receiving regions</li>
+            <li>Merchant app + same-day cash-out</li>
+            <li>Close the earn → spend → cash-out loop</li>
+            <li>Approach contribution break-even (~150k active senders)</li>
+          </ul>
+        </div>
+        <div>
+          <h5>What gets de-risked</h5>
+          <ul>
+            <li>Adds a second high-volume revenue stream</li>
+            <li>Deepens on-the-ground demand &amp; stickiness</li>
+            <li>Proves the full unit-economics picture at density</li>
+          </ul>
+        </div>
+      </div>
+      <div class="gate"><strong>Gate to Phase 4:</strong> positive contribution margin demonstrated; merchant loop showing measurable retention lift.</div>
+    </div>
+
+    <!-- Phase 4 -->
+    <div class="pblock rv">
+      <div class="head"><h3>Phase 4 · Multi-corridor platform</h3><span class="when">MONTH 18+</span></div>
+      <div class="cols">
+        <div>
+          <h5>Goals</h5>
+          <ul>
+            <li>Open UAE→Pakistan, then Bangladesh &amp; Philippines</li>
+            <li>Add Saudi/Qatar as new origin markets</li>
+            <li>Reuse rail, wallet &amp; compliance; swap only ramp partners</li>
+            <li>Raise Series A on proven corridor economics</li>
+          </ul>
+        </div>
+        <div>
+          <h5>What gets de-risked</h5>
+          <ul>
+            <li>Proves the playbook replicates at a fraction of the cost</li>
+            <li>Demonstrates platform leverage &amp; compounding growth</li>
+            <li>Establishes the path to the full SAM</li>
+          </ul>
+        </div>
+      </div>
+      <div class="gate"><strong>Beyond:</strong> the same rail extends to payroll, SME cross-border, and savings — remittance was always the wedge.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HIRING ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker rv">Building the team</div>
+    <h2 class="big rv">Hire just ahead of each phase — never bloated.</h2>
+    <div class="mt grid3">
+      <div class="card rv"><span class="ic">⚖️</span><h3>Phase 0–1 core</h3><p>Founder(s), a compliance/legal lead, 2–3 engineers (mobile + backend/contracts), and a corridor/partnerships lead in the UAE.</p></div>
+      <div class="card rv d1"><span class="ic">🛠️</span><h3>Phase 2 build-out</h3><p>Liquidity/treasury ops, growth lead, customer support in-language, and additional engineering for the routing engine.</p></div>
+      <div class="card rv d2"><span class="ic">🌍</span><h3>Phase 3–4 scale</h3><p>Per-corridor partnership &amp; compliance hires, merchant/agent ops, and a data team for cohort &amp; risk analytics.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARTNERSHIPS ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker rv">The partnership gates</div>
+    <h2 class="big rv">Four relationships the model depends on.</h2>
+    <p class="sub rv">These aren't nice-to-haves — they're prerequisites. Securing them is the real work of Phase 0, and progress here is the clearest early signal of execution.</p>
+    <div class="mt grid4 keep2">
+      <div class="card rv"><span class="ic">🪙</span><h3>Stablecoin issuer</h3><p>Access to regulated USDC liquidity and minting/redemption rails.</p></div>
+      <div class="card rv d1"><span class="ic">🏦</span><h3>Banking partner</h3><p>UAE banking that's comfortable with a licensed stablecoin payments business.</p></div>
+      <div class="card rv d2"><span class="ic">🇮🇳</span><h3>India payout partner</h3><p>A licensed entity to deliver INR into banks/UPI — keeps us compliant on the receiving side.</p></div>
+      <div class="card rv d3"><span class="ic">🛡️</span><h3>Compliance vendors</h3><p>KYC, AML screening and chain-analytics providers wired in from launch.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RISK REGISTER ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker rv">What could go wrong — and what we do about it</div>
+    <h2 class="big rv">The honest risk register.</h2>
+    <p class="sub rv">Every serious investor asks this; showing it unprompted builds trust. The biggest risks aren't technical — they're regulatory and liquidity.</p>
+
+    <div class="risks tablewrap rv">
+      <table>
+        <tr><th>Risk</th><th>Severity</th><th>Mitigation</th></tr>
+        <tr><td>Regulatory change / licensing delay</td><td><span class="sev h">HIGH</span></td><td>Domicile in a clear-regime jurisdiction (ADGM), counsel from day one, reach receiving markets only via licensed partners.</td></tr>
+        <tr><td>Liquidity / payout reliability</td><td><span class="sev h">HIGH</span></td><td>Start with a committed partner; build the LP network &amp; routing engine to diversify; SETU incentives to attract liquidity.</td></tr>
+        <tr><td>Incumbent price response</td><td><span class="sev m">MED</span></td><td>Structural cost advantage on a cheaper rail; incumbents are anchored to correspondent/cash economics they can't easily abandon.</td></tr>
+        <tr><td>Stablecoin / chain risk</td><td><span class="sev m">MED</span></td><td>Use a regulated, transparent stablecoin; chain-abstraction to switch rails; never expose customers to volatility.</td></tr>
+        <tr><td>Adoption slower than hoped</td><td><span class="sev m">MED</span></td><td>Beachhead a single dense corridor; lean burn; referral + agent distribution to keep CAC low while iterating.</td></tr>
+      </table>
+    </div>
+    <div class="ctarow mt"><a class="btn solid" href="competition.html">How we win vs rivals →</a><a class="btn ghost" href="invest.html">The Ask →</a></div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="footgrid">
+      <div>
+        <div class="foothead">Setu</div>
+        <p style="max-width:340px">Stablecoin rails for the world's biggest money corridor. Local money in, local money out, the crypto kept invisible.</p>
+      </div>
+      <div>
+        <h5>The pitch</h5>
+        <ul>
+          <li><a href="problem.html">Problem</a></li>
+          <li><a href="market.html">Market</a></li>
+          <li><a href="product.html">Product</a></li>
+          <li><a href="technology.html">Technology</a></li>
+          <li><a href="economics.html">Economics</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>For investors</h5>
+        <ul>
+          <li><a href="tokenomics.html">Tokenomics</a></li>
+          <li><a href="roadmap.html">Roadmap</a></li>
+          <li><a href="competition.html">Competition</a></li>
+          <li><a href="invest.html">The Ask</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footnote">
+      Timeframes, milestones and the risk register are planning estimates and forward-looking statements, not commitments or guarantees; actual progress will differ and depends on licensing, partnerships, funding and adoption. This website is a concept pitch and is <strong>not</strong> an offer of securities or investment, legal, tax or financial advice. Appropriate licenses and qualified counsel are required before operating.
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

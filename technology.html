@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Setu — Technology · Boring for the user, serious underneath</title>
+<meta name="description" content="The Setu architecture: a two-layer stablecoin settlement stack, chain-agnostic rails, account-abstraction wallets, a liquidity-routing engine, and compliance built in." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,400..700&family=Hanken+Grotesk:wght@300..800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .tech-hero{padding:78px 0 30px}
+  .tech-hero h1{font-size:clamp(40px,6.4vw,78px);margin:.2em 0 .28em;font-weight:600;letter-spacing:-.02em}
+  .tech-hero h1 .it{font-style:italic;color:var(--jade)}
+  /* stack layers */
+  .stack{display:flex;flex-direction:column;gap:12px;margin-top:32px}
+  .layer{border:1px solid var(--line);border-radius:14px;padding:20px 24px;display:grid;grid-template-columns:130px 1fr;gap:20px;align-items:center;background:var(--panel)}
+  @media(max-width:680px){.layer{grid-template-columns:1fr;gap:8px}}
+  .layer .tag2{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.1em;color:var(--saffron)}
+  .layer h3{margin:2px 0 0;font-size:19px}
+  .layer p{margin:6px 0 0;font-size:14.5px;color:#d4cab7}
+  .layer.l1{background:linear-gradient(120deg,rgba(232,163,61,.12),transparent)}
+  .layer.l2{background:linear-gradient(120deg,rgba(70,194,142,.10),transparent)}
+  .layer.l3{background:linear-gradient(120deg,rgba(91,168,216,.10),transparent)}
+  .layer .chips span{display:inline-block;font-size:11px;border:1px solid var(--line-strong);color:var(--cream-dim);padding:3px 9px;border-radius:20px;margin:3px 5px 0 0;font-family:"JetBrains Mono"}
+  .src{font-size:12px;color:var(--cream-faint);margin-top:10px}
+  /* decision callout */
+  .decision{border:1px dashed var(--saffron-deep);border-radius:14px;padding:18px 22px;background:rgba(232,163,61,.06);margin-top:20px}
+  .decision b{color:var(--saffron)}
+  .secgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:28px}
+  @media(max-width:760px){.secgrid{grid-template-columns:1fr}}
+  .secgrid .s{border:1px solid var(--line);border-radius:14px;padding:20px;background:var(--panel)}
+  .secgrid .s h4{margin:0 0 6px;font-size:16px;display:flex;gap:8px;align-items:center}
+  .secgrid .s p{margin:0;font-size:14px;color:#d4cab7}
+  .stackmap{font-family:"JetBrains Mono";font-size:13px;color:#d4cab7;line-height:1.9;background:var(--ink-3);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-top:24px;overflow-x:auto}
+  .stackmap .k{color:var(--saffron)}
+  .stackmap .c{color:var(--jade)}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <svg width="26" height="26" viewBox="0 0 26 26"><path d="M2 18 C8 6, 18 6, 24 18" stroke="#E8A33D" stroke-width="2.4" fill="none" stroke-linecap="round"/><circle cx="2" cy="18" r="2.6" fill="#46C28E"/><circle cx="24" cy="18" r="2.6" fill="#46C28E"/></svg>
+      Setu
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="problem.html">Problem</a>
+      <a href="market.html">Market</a>
+      <a href="product.html">Product</a>
+      <a href="technology.html" class="active">Technology</a>
+      <a href="economics.html">Economics</a>
+      <a href="tokenomics.html">Token</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="competition.html">Competition</a>
+      <a href="invest.html">Invest</a>
+    </nav>
+    <a class="btn solid sm navcta" href="invest.html">The Ask →</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<div class="tech-hero">
+  <div class="wrap">
+    <div class="eyebrow">Technology</div>
+    <h1>Boring for the user.<br><span class="it">Serious engineering underneath.</span></h1>
+    <p class="lede">The product feels like a simple money app precisely <em>because</em> the architecture does the hard work. Four layers — app, network token, settlement, and ramps — combine into a system that's instant for the user and compliant for the regulator.</p>
+  </div>
+</div>
+
+<!-- ============ THE FOUR LAYERS ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker rv">System architecture</div>
+    <h2 class="big rv">Four layers, one job: local money in, local money out.</h2>
+
+    <div class="stack rv">
+      <div class="layer l3">
+        <div><div class="tag2">LAYER 4</div><h3>App &amp; identity</h3></div>
+        <div><p>The mobile app the customer touches: onboarding, KYC, saved recipients, rate quotes, receipts. All values shown in local currency. This is the only layer the user ever perceives.</p>
+          <div class="chips"><span>iOS / Android</span><span>passkeys</span><span>local-currency UI</span><span>multi-language</span></div>
+        </div>
+      </div>
+      <div class="layer l2">
+        <div><div class="tag2">LAYER 3</div><h3>Wallet &amp; orchestration</h3></div>
+        <div><p>Embedded smart-account wallets (account abstraction) handle keys invisibly. The orchestration engine quotes FX, locks rates, routes each transfer to the best liquidity provider, and confirms settlement.</p>
+          <div class="chips"><span>account abstraction</span><span>smart accounts</span><span>routing engine</span><span>FX quoting</span></div>
+        </div>
+      </div>
+      <div class="layer l1">
+        <div><div class="tag2">LAYER 2</div><h3>Settlement (stablecoin rail)</h3></div>
+        <div><p>Value crosses borders as regulated USDC on a fast, low-fee chain — settling in seconds for fractions of a cent. This is the layer that replaces the entire correspondent-bank chain.</p>
+          <div class="chips"><span>USDC</span><span>Solana / Stellar / Base</span><span>chain-abstracted</span><span>~$0.001 fees</span></div>
+        </div>
+      </div>
+      <div class="layer l2">
+        <div><div class="tag2">LAYER 1</div><h3>Liquidity &amp; ramps</h3></div>
+        <div><p>On-ramps (AED in) and off-ramps (INR out) via licensed partners and a network of liquidity providers and cash agents. The SETU token coordinates and rewards this layer.</p>
+          <div class="chips"><span>licensed payout partners</span><span>LP network</span><span>cash agents</span><span>SETU staking</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="note rv">The genius is the separation: the <strong>user-facing layers</strong> speak money and never mention crypto, while the <strong>settlement layer</strong> speaks stablecoin and never touches a customer. Each does one thing well.</div>
+  </div>
+</section>
+
+<!-- ============ CHAIN SELECTION ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker rv">Chain selection</div>
+    <h2 class="big rv">We're chain-agnostic — but we choose deliberately.</h2>
+    <p class="sub rv">The settlement chain must be fast, near-free, final, and carry deep regulated-stablecoin liquidity. We abstract the chain away from the app, so we can switch or multi-home without the user noticing. Here's the candidate comparison.</p>
+
+    <div class="tablewrap mt rv">
+      <table>
+        <tr><th>Chain</th><th class="mono">Typical fee</th><th class="mono">Finality</th><th class="mono">USDC support</th><th>Why it matters here</th></tr>
+        <tr><td>Solana</td><td class="mono">&lt;$0.01</td><td class="mono">~seconds</td><td class="mono">native</td><td>High throughput &amp; low cost; strong for consumer payments at scale</td></tr>
+        <tr><td>Stellar</td><td class="mono">~$0.00001</td><td class="mono">~5s</td><td class="mono">native</td><td>Purpose-built for cross-border payments &amp; remittance</td></tr>
+        <tr><td>Base (L2)</td><td class="mono">~$0.01</td><td class="mono">~seconds</td><td class="mono">native</td><td>Ethereum security, deep USDC liquidity, strong tooling</td></tr>
+        <tr><td>Tron</td><td class="mono">&lt;$0.001</td><td class="mono">~seconds</td><td class="mono">deep</td><td>Already heavily used for stablecoin transfers in emerging markets</td></tr>
+      </table>
+    </div>
+    <div class="decision rv"><b>Decision:</b> launch on a low-fee, fast settlement chain with native, regulated USDC and deep liquidity (Solana or Stellar as lead candidates), behind a <b>chain-abstraction layer</b> so the rail can evolve without touching the product. We optimise for cost-per-transfer, finality, and stablecoin depth — not ideology.</div>
+    <p class="src">Fee/finality figures are approximate and chain-dependent; final selection pending technical due diligence and partner liquidity terms.</p>
+  </div>
+</section>
+
+<!-- ============ STABLECOIN CHOICE ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker rv">Why we don't mint our own coin</div>
+    <h2 class="big rv">We use a regulated stablecoin. Trust is borrowed, not built from scratch.</h2>
+    <div class="mt grid3">
+      <div class="card rv"><span class="ic">🏛️</span><h3>Already regulated</h3><p>USDC operates under emerging frameworks (US GENIUS Act, EU MiCA) with attested, transparent reserves. We inherit that credibility instead of spending years earning it.</p></div>
+      <div class="card rv d1"><span class="ic">⚙️</span><h3>Less to defend</h3><p>Minting our own stablecoin means managing reserves, redemptions, audits and reserve-banking risk. That's a whole company. We'd rather perfect the rail and the experience.</p></div>
+      <div class="card rv d2"><span class="ic">💧</span><h3>Instant liquidity</h3><p>An established stablecoin already has deep markets and partners everywhere, so liquidity providers can source and offload it cheaply from day one.</p></div>
+    </div>
+    <div class="note good rv">The customer never sees "USDC" anyway — so there's no branding upside to our own coin, only cost and risk. The <strong>SETU token is the network's coordination layer, not a stablecoin</strong> (full detail on the Token tab).</div>
+  </div>
+</section>
+
+<!-- ============ WALLETS / CUSTODY ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker rv">Wallets &amp; custody</div>
+    <h2 class="big rv">No seed phrases. No lost funds. No crypto homework.</h2>
+    <p class="sub rv">The single biggest barrier to crypto adoption was key management. Account abstraction and passkeys remove it entirely — the user gets bank-like recoverability with self-custody-grade security.</p>
+
+    <div class="secgrid rv">
+      <div class="s"><h4>🔑 Account abstraction</h4><p>Each user gets a smart-account wallet that can be controlled by a passkey/biometric rather than a raw private key — programmable, recoverable, and human-friendly.</p></div>
+      <div class="s"><h4>🧬 Social / passkey recovery</h4><p>Lost your phone? Recover access via passkey + verification, the way you'd reset a normal account — no 12 words to lose forever.</p></div>
+      <div class="s"><h4>🛡️ Funds segregation</h4><p>Customer balances are held distinctly from operating funds; stablecoin held in transit is never commingled with company treasury.</p></div>
+      <div class="s"><h4>⛽ Gas abstraction</h4><p>Network fees are sponsored and paid by Setu in the background. The user never holds a "gas token" or sees a fee they don't understand.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LIQUIDITY ENGINE ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker rv">The liquidity engine</div>
+    <h2 class="big rv">The hard part isn't the transfer. It's the cash on both ends.</h2>
+    <p class="sub rv">Moving USDC is trivial. The real engineering is matching every transfer to local-currency liquidity at the tightest spread, instantly. That's what the routing engine + LP network do.</p>
+
+    <div class="flowwrap mt rv">
+      <div class="flowtitle"><span class="tag">LIQUIDITY ROUTING</span> Matching a transfer to the cheapest local payout</div>
+      <svg class="flow" viewBox="0 0 1120 250">
+        <defs><marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#c7bca6"/></marker></defs>
+        <rect class="nodeA" x="20" y="100" width="180" height="70" rx="12"/>
+        <text x="110" y="130" text-anchor="middle" class="lbl">📥 Transfer request</text>
+        <text x="110" y="150" text-anchor="middle" class="sub">AED 1,000 → INR</text>
+        <path class="arrow" d="M204 135 H276" marker-end="url(#arr)"/>
+        <rect class="node" x="280" y="100" width="200" height="70" rx="12"/>
+        <text x="380" y="126" text-anchor="middle" class="lbl">🧠 Routing engine</text>
+        <text x="380" y="146" text-anchor="middle" class="sub">picks best LP + path</text>
+        <!-- branch to LPs -->
+        <path class="arrow" d="M484 120 H560 V40 H636" marker-end="url(#arr)"/>
+        <path class="arrow" d="M484 135 H600 V135 H636" marker-end="url(#arr)"/>
+        <path class="arrow" d="M484 150 H560 V228 H636" marker-end="url(#arr)"/>
+        <rect class="nodeG" x="640" y="18" width="180" height="46" rx="10"/>
+        <text x="730" y="40" text-anchor="middle" class="lbl">LP-A · spread 0.4%</text>
+        <text x="730" y="56" text-anchor="middle" class="step">✓ chosen</text>
+        <rect class="node" x="640" y="112" width="180" height="46" rx="10"/>
+        <text x="730" y="140" text-anchor="middle" class="sub">LP-B · spread 0.6%</text>
+        <rect class="node" x="640" y="206" width="180" height="46" rx="10"/>
+        <text x="730" y="234" text-anchor="middle" class="sub">LP-C · spread 0.7%</text>
+        <path class="arrow" d="M824 41 H900 V135 H956" marker-end="url(#arr)"/>
+        <rect class="nodeG" x="960" y="108" width="140" height="56" rx="12"/>
+        <text x="1030" y="132" text-anchor="middle" class="lbl">🏠 INR paid</text>
+        <text x="1030" y="150" text-anchor="middle" class="sub">to family</text>
+      </svg>
+    </div>
+    <div class="mt grid3">
+      <div class="card rv"><span class="ic">🔁</span><h3>Competitive spreads</h3><p>LPs bid to fill payouts. The engine routes to the cheapest, so competition — not us — drives the price down.</p></div>
+      <div class="card rv d1"><span class="ic">⚖️</span><h3>Float management</h3><p>The engine balances liquidity across corridors, pre-positioning where demand is, minimising idle capital.</p></div>
+      <div class="card rv d2"><span class="ic">🎯</span><h3>SETU-staked access</h3><p>LPs stake SETU for the right to serve high-value flow, aligning their incentives with network reliability.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECURITY ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker rv">Security model</div>
+    <h2 class="big rv">Money apps live and die on trust.</h2>
+    <div class="secgrid rv">
+      <div class="s"><h4>🔍 Audited contracts</h4><p>All smart-contract components independently audited before mainnet, with continuous monitoring and a bug-bounty program.</p></div>
+      <div class="s"><h4>📡 Real-time monitoring</h4><p>On-chain transaction monitoring and anomaly detection flag suspicious flows automatically, 24/7.</p></div>
+      <div class="s"><h4>🔐 Key management</h4><p>Operational keys in hardware security modules / MPC with multi-party approval for treasury movements.</p></div>
+      <div class="s"><h4>🧯 Limits &amp; circuit breakers</h4><p>Per-user and system-level velocity limits and kill-switches contain any incident before it spreads.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMPLIANCE TECH ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker rv">Compliance, built in</div>
+    <h2 class="big rv">Regulators are a feature, not an afterthought.</h2>
+    <p class="sub rv">A money-movement business that isn't compliant isn't a business — it's a liability. The compliance stack is wired through the whole system from day one.</p>
+    <div class="mt grid3">
+      <div class="card rv"><span class="ic">🪪</span><h3>KYC / identity</h3><p>Document + biometric verification at onboarding via a specialist provider; risk-based re-verification thereafter.</p></div>
+      <div class="card rv d1"><span class="ic">🧭</span><h3>AML &amp; screening</h3><p>Sanctions, PEP and watchlist screening on every party; transaction-pattern analysis to detect structuring or fraud.</p></div>
+      <div class="card rv d2"><span class="ic">🔗</span><h3>Travel Rule</h3><p>Originator/beneficiary data shared between regulated parties as required for cross-border value transfer.</p></div>
+      <div class="card rv"><span class="ic">⛓️</span><h3>On-chain analytics</h3><p>Blockchain-forensics tooling screens stablecoin addresses against illicit-activity databases before settlement.</p></div>
+      <div class="card rv d1"><span class="ic">📁</span><h3>Audit trail</h3><p>Every transfer fully logged and reconstructable for regulators and auditors across both fiat and on-chain legs.</p></div>
+      <div class="card rv d2"><span class="ic">🏛️</span><h3>Licensed perimeter</h3><p>Operates within VASP / payment licensing in the UAE and via licensed partners in payout markets (see Roadmap &amp; Invest).</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STACK SUMMARY ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker rv">The build, at a glance</div>
+    <h2 class="big rv">The actual stack.</h2>
+    <div class="stackmap rv">
+      <span class="k">app</span>        → React Native (iOS + Android), passkey auth, local-currency UI<br>
+      <span class="k">backend</span>    → API + orchestration, FX quoting, rate-lock, routing engine<br>
+      <span class="k">wallet</span>     → embedded smart accounts (account abstraction) + gas sponsorship<br>
+      <span class="c">settlement</span> → USDC on a low-fee chain (Solana / Stellar / Base), chain-abstracted<br>
+      <span class="c">liquidity</span>  → LP network + licensed payout partners + cash-agent API<br>
+      <span class="k">compliance</span> → KYC vendor + AML screening + chain analytics + Travel Rule<br>
+      <span class="k">token</span>      → SETU utility/governance contracts + staking for LP access<br>
+      <span class="k">infra</span>      → cloud + HSM/MPC key mgmt + monitoring + audit logging
+    </div>
+    <div class="ctarow mt"><a class="btn solid" href="economics.html">See the unit economics →</a><a class="btn ghost" href="tokenomics.html">The SETU token →</a></div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="footgrid">
+      <div>
+        <div class="foothead">Setu</div>
+        <p style="max-width:340px">Stablecoin rails for the world's biggest money corridor. Local money in, local money out, the crypto kept invisible.</p>
+      </div>
+      <div>
+        <h5>The pitch</h5>
+        <ul>
+          <li><a href="problem.html">Problem</a></li>
+          <li><a href="market.html">Market</a></li>
+          <li><a href="product.html">Product</a></li>
+          <li><a href="technology.html">Technology</a></li>
+          <li><a href="economics.html">Economics</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>For investors</h5>
+        <ul>
+          <li><a href="tokenomics.html">Tokenomics</a></li>
+          <li><a href="roadmap.html">Roadmap</a></li>
+          <li><a href="competition.html">Competition</a></li>
+          <li><a href="invest.html">The Ask</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footnote">
+      Architecture and chain/vendor choices described here are design intent and subject to technical due diligence; chain fee/finality figures are approximate. This website is a concept pitch and is <strong>not</strong> an offer of securities or investment, legal, tax or financial advice. Appropriate licenses and qualified counsel are required before operating.
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

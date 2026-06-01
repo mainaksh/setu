@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Setu — The Problem · A 6% tax on the people who can least afford it</title>
+<meta name="description" content="Remittance is the largest external finance flow to the developing world — and middlemen skim 6%+ off the top. Here's the anatomy of the problem Setu solves." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,400..700&family=Hanken+Grotesk:wght@300..800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .prob-hero{padding:78px 0 30px}
+  .prob-hero h1{font-size:clamp(40px,6.4vw,80px);margin:.2em 0 .28em;font-weight:600;letter-spacing:-.02em}
+  .prob-hero h1 .it{font-style:italic;color:var(--rose)}
+  /* persona */
+  .persona{display:flex;gap:18px;align-items:flex-start}
+  .persona .av{width:54px;height:54px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-size:26px;
+    background:rgba(232,163,61,.14);border:1px solid var(--saffron-deep)}
+  .persona .av.g{background:rgba(70,194,142,.13);border-color:var(--jade-deep)}
+  .persona h3{margin:0 0 2px;font-size:19px}
+  .persona .role{font-family:"JetBrains Mono";font-size:12px;color:var(--jade);letter-spacing:.02em}
+  /* fee anatomy stacked bar */
+  .feestack{display:flex;height:58px;border-radius:12px;overflow:hidden;border:1px solid var(--line);margin-top:8px}
+  .feestack span{display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:650;color:#1c1100;text-align:center;padding:0 6px}
+  .feeleg{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 26px;margin-top:18px}
+  .feeleg div{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:#d4cab7}
+  .feeleg .sw{width:13px;height:13px;border-radius:3px;flex:none;margin-top:5px}
+  .src{font-size:12px;color:var(--cream-faint);margin-top:10px}
+  .src a{color:var(--cream-faint);text-decoration:underline}
+  .bigfig{font-family:"Fraunces";font-size:clamp(64px,12vw,150px);line-height:.9;font-weight:600;color:var(--rose);letter-spacing:-.03em}
+  .dilemma{border:1px solid var(--line);border-radius:var(--r);padding:24px;background:var(--panel)}
+  .dilemma h3{font-size:19px;margin:0 0 6px;display:flex;align-items:center;gap:9px}
+  .dilemma .x{color:var(--rose);font-size:22px}
+  .corridor-stat{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+  .corridor-stat>div{background:var(--ink);padding:22px}
+  .corridor-stat b{font-family:"Fraunces";font-size:30px;color:var(--saffron);display:block;line-height:1}
+  .corridor-stat span{font-size:13px;color:var(--cream-dim);display:block;margin-top:7px}
+  @media(max-width:760px){.corridor-stat{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <svg width="26" height="26" viewBox="0 0 26 26"><path d="M2 18 C8 6, 18 6, 24 18" stroke="#E8A33D" stroke-width="2.4" fill="none" stroke-linecap="round"/><circle cx="2" cy="18" r="2.6" fill="#46C28E"/><circle cx="24" cy="18" r="2.6" fill="#46C28E"/></svg>
+      Setu
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="problem.html" class="active">Problem</a>
+      <a href="market.html">Market</a>
+      <a href="product.html">Product</a>
+      <a href="technology.html">Technology</a>
+      <a href="economics.html">Economics</a>
+      <a href="tokenomics.html">Token</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="competition.html">Competition</a>
+      <a href="invest.html">Invest</a>
+    </nav>
+    <a class="btn solid sm navcta" href="invest.html">The Ask →</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<div class="prob-hero">
+  <div class="wrap">
+    <div class="eyebrow">The Problem</div>
+    <h1>The world sends $900B home a year.<br><span class="it">Middlemen skim 6% off the top.</span></h1>
+    <p class="lede">Remittances are now the largest source of external finance for the developing world — bigger than foreign direct investment. Yet the fee to send them has barely moved in a decade. That gap is the opportunity.</p>
+
+    <div class="statband mt-l rv">
+      <div><b>$905B</b><span>Global remittances in 2024, up 4.6% year on year (World Bank)</span></div>
+      <div><b style="color:var(--rose)">6.36%</b><span>Average cost to send $200 — Q3 2025, more than double the UN's 3% target</span></div>
+      <div><b style="color:var(--rose)">~15%</b><span>Average cost when you send through a bank — the worst offender</span></div>
+      <div><b class="jade">&gt;FDI</b><span>Remittances to poorer nations now exceed foreign direct investment</span></div>
+    </div>
+    <p class="src">Sources: World Bank Remittance Prices Worldwide (Q3 2025); IOM Migration Data Portal.</p>
+  </div>
+</div>
+
+<!-- ============ WHO PAYS ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker rv">Who actually pays this fee</div>
+    <h2 class="big rv">It isn't a bank. It's a family.</h2>
+    <p class="sub rv">The fee doesn't come out of some corporate treasury — it comes out of a paycheck that was already stretched thin. These are the people on both ends of the wire.</p>
+
+    <div class="mt grid3">
+      <div class="card rv">
+        <div class="persona">
+          <div class="av">👷</div>
+          <div><h3>Rajesh, 34</h3><div class="role">CONSTRUCTION · DUBAI</div></div>
+        </div>
+        <p class="mt-s">Sends AED 1,000–1,500 home every month to his family in Kerala. Loses ~$17 each time to fees and a quietly padded exchange rate. Over a year, that's a month's groceries — gone.</p>
+      </div>
+      <div class="card rv d1">
+        <div class="persona">
+          <div class="av g">🧑‍💻</div>
+          <div><h3>Aisha, 29</h3><div class="role">SOFTWARE · ABU DHABI</div></div>
+        </div>
+        <p class="mt-s">A new, fast-growing segment: white-collar expats sending larger sums, more often — for family support, EMIs, and investments back home. Cares about speed and a fair rate, not loyalty to a bank.</p>
+      </div>
+      <div class="card rv d2">
+        <div class="persona">
+          <div class="av g">🏠</div>
+          <div><h3>The receiver</h3><div class="role">KERALA · INDIA</div></div>
+        </div>
+        <p class="mt-s">Waits 1–5 days, travels to a payout branch, and accepts whatever rate they're given. For millions, this transfer is the household's primary income. The friction is felt, not abstract.</p>
+      </div>
+    </div>
+    <div class="note rv">Crucially, both ends are <strong>warm contacts</strong> — a sender and the family they love. That single fact is why a better product spreads along relationships instead of needing paid acquisition. (We'll return to this in Go-to-Market.)</div>
+  </div>
+</section>
+
+<!-- ============ ANATOMY OF THE FEE ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker rv">Anatomy of the fee</div>
+    <h2 class="big rv">Where does 6.5% actually go?</h2>
+    <p class="sub rv">Almost none of it is "service." It's the cost of an old plumbing system: layers of correspondent banks, each taking a cut, plus a foreign-exchange markup hidden inside a rate you never get to see.</p>
+
+    <div class="card flat mt rv" style="padding:28px">
+      <div style="display:flex;justify-content:space-between;font-size:13px;color:var(--cream-dim)"><span>On a $270 transfer (AED 1,000)</span><span style="color:var(--rose)">total ≈ $17.50</span></div>
+      <div class="feestack">
+        <span style="width:30%;background:#E06A6A">FX markup</span>
+        <span style="width:28%;background:#cf6f5a">Sending fee</span>
+        <span style="width:22%;background:#c47e1d">Correspondent hops</span>
+        <span style="width:12%;background:#a8732a">Payout / cash-out</span>
+        <span style="width:8%;background:#8a6a3a">Compliance</span>
+      </div>
+      <div class="feeleg">
+        <div><span class="sw" style="background:#E06A6A"></span><span><strong>FX markup (~$5).</strong> A spread baked into the rate — the most invisible and most resented charge.</span></div>
+        <div><span class="sw" style="background:#cf6f5a"></span><span><strong>Sending fee (~$5).</strong> A flat or percentage charge at the counter or in the app.</span></div>
+        <div><span class="sw" style="background:#c47e1d"></span><span><strong>Correspondent hops (~$4).</strong> Each intermediary bank in the chain takes a slice and adds a day.</span></div>
+        <div><span class="sw" style="background:#a8732a"></span><span><strong>Payout (~$2).</strong> The cost of getting cash or a deposit to the receiver locally.</span></div>
+      </div>
+      <p class="src">Illustrative breakdown consistent with World Bank cost-component analysis; exact split varies by provider and corridor.</p>
+    </div>
+
+    <div class="note good rv"><strong>Setu's insight:</strong> a regulated stablecoin replaces the entire correspondent-bank chain with a single near-free transfer. What's left is a thin FX spread and a local payout — which is how the all-in cost collapses below 1%.</div>
+  </div>
+</section>
+
+<!-- ============ NOT JUST COST ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker rv">It's not only the money</div>
+    <h2 class="big rv">Three problems, not one.</h2>
+    <div class="mt grid3">
+      <div class="card rv"><span class="ic">💸</span><h3>Expensive</h3><p>6.36% average globally; up to 15% through banks. A direct, recurring tax on the lowest-income workers in the economy.</p></div>
+      <div class="card rv d1"><span class="ic">🐌</span><h3>Slow</h3><p>1–5 business days through correspondent banking. Money is "in transit" — useless to a family that needs it now.</p></div>
+      <div class="card rv d2"><span class="ic">🌫️</span><h3>Opaque</h3><p>The real cost hides in the exchange rate. The sender is told "no fee" while losing 3–4% on a marked-up rate.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY INCUMBENTS CAN'T FIX IT ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker rv">Why this hasn't already been solved</div>
+    <h2 class="big rv">The incumbents are structurally trapped.</h2>
+    <p class="sub rv">This isn't a problem of nobody noticing. It's a problem of who <em>can't</em> move — each incumbent is locked into the very cost structure that makes them expensive.</p>
+
+    <div class="mt grid2">
+      <div class="dilemma rv"><h3><span class="x">✕</span> Banks</h3><p style="color:#d4cab7">Run on correspondent banking — the multi-hop chain <em>is</em> their rail. They can't undercut a cost structure they're built on, and remittances are a low priority next to lending.</p></div>
+      <div class="dilemma rv d1"><h3><span class="x">✕</span> Western Union &amp; cash MTOs</h3><p style="color:#d4cab7">A vast physical agent network is their moat — and their anchor. Cash handling, real estate and staff keep costs high; going cheap cannibalizes the network they depend on.</p></div>
+      <div class="dilemma rv"><h3><span class="x">✕</span> Card networks</h3><p style="color:#d4cab7">Interchange economics mean 2–3% is the floor, plus multi-day settlement holds. Their incentives point toward keeping fees, not killing them.</p></div>
+      <div class="dilemma rv d1"><h3><span class="x">✕</span> Even the fintechs</h3><p style="color:#d4cab7">Wise and Revolut genuinely improved pricing — but still ride banking rails and pre-funded float in every country, capping how low they can go and which corridors they can serve.</p></div>
+    </div>
+    <div class="note rv">A new entrant on a fundamentally cheaper rail — regulated stablecoins — isn't competing on the same curve. It's a different cost structure entirely. <strong>That's the wedge.</strong></div>
+  </div>
+</section>
+
+<!-- ============ THE CORRIDOR WE ATTACK ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker rv">The beachhead</div>
+    <h2 class="big rv">We don't boil the ocean. We win one corridor: UAE → India.</h2>
+    <p class="sub rv">It's the single best entry point on the planet — enormous, concentrated, already digitizing, and sitting right next to our regulatory home base.</p>
+
+    <div class="corridor-stat mt rv">
+      <div><b>$135.5B</b><span>India's total inbound remittances in 2025 — #1 in the world (RBI)</span></div>
+      <div><b>$21.6B</b><span>Sent from the UAE alone — ~19% of India's inflows, its #2 source</span></div>
+      <div><b>~14%</b><span>India's share of <em>all</em> global remittances — unmatched concentration</span></div>
+      <div><b>₹24.8</b><span>Approx. dirham-rupee rate (2025) — a single, liquid, high-volume pair</span></div>
+    </div>
+
+    <div class="mt grid3">
+      <div class="card rv"><span class="ic">🧱</span><h3>Concentrated demand</h3><p>Millions of South Asian workers in one small geography. Acquisition, cash-in and support are all local — not spread across a continent.</p></div>
+      <div class="card rv d1"><span class="ic">📲</span><h3>Already digital</h3><p>India's UPI and a 2023 UAE–India local-currency settlement pact mean both ends are primed for instant digital payout. The behavior already exists.</p></div>
+      <div class="card rv d2"><span class="ic">⚖️</span><h3>Next to home base</h3><p>One end of the corridor <em>is</em> our jurisdiction (Abu Dhabi / ADGM). Regulatory, banking and on-ramp work happens where we're licensed.</p></div>
+    </div>
+    <p class="src">Sources: Reserve Bank of India; World Bank Migration &amp; Development Brief; Gulf News (2025). Rate illustrative and fluctuating.</p>
+  </div>
+</section>
+
+<!-- ============ THE STAKES ============ -->
+<section>
+  <div class="wrap rv" style="display:grid;grid-template-columns:1fr 1.1fr;gap:46px;align-items:center">
+    <div>
+      <div class="bigfig">6%</div>
+      <p class="sub mt-s">is the toll on a lifeline. For the country at the other end, these flows exceed foreign direct investment and dwarf foreign aid. Shaving the fee toward zero isn't a feature — it's measurable money returned to the households that need it most.</p>
+    </div>
+    <div>
+      <div class="quote">"Remittances are love, sent in money. The fee is the tollbooth on that love."</div>
+      <p style="color:var(--cream-dim);margin-top:22px">Every basis point we remove is both a moral win and our revenue base. The two are not in tension — they're the same line of business.</p>
+      <div class="ctarow"><a class="btn solid" href="market.html">See the market size →</a><a class="btn ghost" href="product.html">How we fix it →</a></div>
+    </div>
+  </div>
+  <style>@media(max-width:880px){section .wrap[style*="grid-template-columns:1fr 1.1fr"]{grid-template-columns:1fr !important;gap:28px !important}}</style>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="footgrid">
+      <div>
+        <div class="foothead">Setu</div>
+        <p style="max-width:340px">Stablecoin rails for the world's biggest money corridor. Local money in, local money out, the crypto kept invisible.</p>
+      </div>
+      <div>
+        <h5>The pitch</h5>
+        <ul>
+          <li><a href="problem.html">Problem</a></li>
+          <li><a href="market.html">Market</a></li>
+          <li><a href="product.html">Product</a></li>
+          <li><a href="technology.html">Technology</a></li>
+          <li><a href="economics.html">Economics</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>For investors</h5>
+        <ul>
+          <li><a href="tokenomics.html">Tokenomics</a></li>
+          <li><a href="roadmap.html">Roadmap</a></li>
+          <li><a href="competition.html">Competition</a></li>
+          <li><a href="invest.html">The Ask</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footnote">
+      Figures are drawn from public sources (World Bank Remittance Prices Worldwide, Q3 2025; Reserve Bank of India; IOM World Migration Report 2026) and are summarized for illustration. This website is a concept pitch and is <strong>not</strong> an offer of securities or investment, legal, tax or financial advice. Crypto, remittance and payment activity is heavily regulated and varies by country; qualified counsel and licenses are required before operating.
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

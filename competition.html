@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Setu — Competition · Everyone improved the old rail. We changed it.</title>
+<meta name="description" content="How Setu compares to Western Union, Wise, banks and crypto-native apps — and why a stablecoin rail is a structural advantage, not just better execution." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,400..700&family=Hanken+Grotesk:wght@300..800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .cp-hero{padding:78px 0 30px}
+  .cp-hero h1{font-size:clamp(38px,6vw,74px);margin:.2em 0 .28em;font-weight:600;letter-spacing:-.02em}
+  .cp-hero h1 .it{font-style:italic;color:var(--saffron)}
+  /* matrix */
+  .matrix{margin-top:30px;border:1px solid var(--line);border-radius:var(--r);overflow-x:auto}
+  .matrix table{min-width:760px}
+  .matrix th,.matrix td{text-align:center;padding:14px 12px;border-bottom:1px solid var(--line)}
+  .matrix th:first-child,.matrix td:first-child{text-align:left;font-weight:600;color:var(--cream)}
+  .matrix thead th{font-family:"Fraunces";font-size:14px;color:var(--cream)}
+  .matrix .setucol{background:rgba(70,194,142,.09)}
+  .matrix thead .setucol{color:var(--jade)}
+  .mk{font-size:16px}
+  .mk.y{color:var(--jade)}.mk.n{color:var(--rose)}.mk.p{color:var(--saffron)}
+  .matrix td small{display:block;font-size:11px;color:var(--cream-faint);font-family:"JetBrains Mono"}
+  .src{font-size:12px;color:var(--cream-faint);margin-top:12px}
+  /* landscape */
+  .land{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:28px}
+  @media(max-width:760px){.land{grid-template-columns:1fr}}
+  .land .l{border:1px solid var(--line);border-radius:14px;padding:20px;background:var(--panel)}
+  .land .l h4{margin:0 0 4px;font-size:16px}
+  .land .l .who{font-family:"JetBrains Mono";font-size:11px;color:var(--cream-faint);letter-spacing:.04em}
+  .land .l p{margin:8px 0 0;font-size:14px;color:#d4cab7}
+  .land .l .weak{margin-top:10px;font-size:12.5px;color:var(--rose)}
+  .moat{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+  @media(max-width:820px){.moat{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <svg width="26" height="26" viewBox="0 0 26 26"><path d="M2 18 C8 6, 18 6, 24 18" stroke="#E8A33D" stroke-width="2.4" fill="none" stroke-linecap="round"/><circle cx="2" cy="18" r="2.6" fill="#46C28E"/><circle cx="24" cy="18" r="2.6" fill="#46C28E"/></svg>
+      Setu
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="problem.html">Problem</a>
+      <a href="market.html">Market</a>
+      <a href="product.html">Product</a>
+      <a href="technology.html">Technology</a>
+      <a href="economics.html">Economics</a>
+      <a href="tokenomics.html">Token</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="competition.html" class="active">Competition</a>
+      <a href="invest.html">Invest</a>
+    </nav>
+    <a class="btn solid sm navcta" href="invest.html">The Ask →</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<div class="cp-hero">
+  <div class="wrap">
+    <div class="eyebrow">Competition</div>
+    <h1>Everyone improved the old rail.<br><span class="it">We changed the rail.</span></h1>
+    <p class="lede">Wise made it transparent. Remitly made it digital. Western Union made it everywhere. All of them, though, still run on correspondent banking and pre-funded float. Setu runs on a stablecoin — a different cost structure entirely. That's the difference between competing and out-positioning.</p>
+  </div>
+</div>
+
+<!-- ============ LANDSCAPE ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker rv">The landscape</div>
+    <h2 class="big rv">Five kinds of competitor, five different weaknesses.</h2>
+    <div class="land rv">
+      <div class="l"><div class="who">LEGACY CASH MTOs</div><h4>Western Union, MoneyGram</h4><p>Unmatched physical reach — 500k+ agent locations, cash pickup anywhere. The default for the unbanked.</p><div class="weak">✕ Expensive; FX margin hidden in the rate; built on costly cash handling they can't shed.</div></div>
+      <div class="l"><div class="who">DIGITAL MTOs</div><h4>Remitly, WorldRemit, TapTap Send</h4><p>App-first, faster, cheaper than legacy. Strong on specific corridors.</p><div class="weak">✕ Still ride banking rails + pre-funded float; FX markup; corridor-by-corridor cost.</div></div>
+      <div class="l"><div class="who">FINTECH / NEOBANK</div><h4>Wise, Revolut, NRI neobanks</h4><p>Transparent pricing (Wise from ~0.33%), mid-market rates, great UX for the banked.</p><div class="weak">✕ Needs a bank account both ends; float in every country caps how low cost can go; can't reach cash users.</div></div>
+      <div class="l"><div class="who">BANKS</div><h4>Traditional retail banks</h4><p>Trusted, universal, integrated with accounts.</p><div class="weak">✕ The worst price (~15% avg) and slowest; remittance is an afterthought.</div></div>
+      <div class="l"><div class="who">CRYPTO-NATIVE</div><h4>Stablecoin wallets &amp; apps</h4><p>Cheapest rail in theory; instant; borderless.</p><div class="weak">✕ Make the user learn crypto — wallets, seed phrases, volatility. Mass adoption stalls at the UX.</div></div>
+      <div class="l" style="border-color:var(--jade-deep);background:rgba(70,194,142,.08)"><div class="who" style="color:var(--jade)">SETU</div><h4>Stablecoin rail · invisible UX</h4><p>The cheap rail of crypto-native, the simplicity of a fintech app, and reach into cash via agents — combined.</p><div class="weak" style="color:var(--jade)">✓ Cheapest structure + simplest experience + unbanked reach.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MATRIX ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker rv">Head to head</div>
+    <h2 class="big rv">The comparison that matters.</h2>
+    <div class="matrix rv">
+      <table>
+        <thead>
+          <tr><th>What the sender cares about</th><th>Banks</th><th>Western Union</th><th>Wise</th><th>Crypto apps</th><th class="setucol">Setu</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>All-in cost</td><td><span class="mk n">✕</span><small>~15%</small></td><td><span class="mk p">~</span><small>high + FX</small></td><td><span class="mk p">~</span><small>~0.3–1%+</small></td><td><span class="mk y">✓</span><small>low</small></td><td class="setucol"><span class="mk y">✓</span><small>&lt;1%</small></td></tr>
+          <tr><td>Speed</td><td><span class="mk n">✕</span><small>1–5 days</small></td><td><span class="mk p">~</span><small>min–3 days</small></td><td><span class="mk p">~</span><small>1–2 days</small></td><td><span class="mk y">✓</span><small>seconds</small></td><td class="setucol"><span class="mk y">✓</span><small>seconds</small></td></tr>
+          <tr><td>FX transparency</td><td><span class="mk n">✕</span></td><td><span class="mk n">✕</span><small>margin hidden</small></td><td><span class="mk y">✓</span><small>mid-market</small></td><td><span class="mk p">~</span></td><td class="setucol"><span class="mk y">✓</span><small>shown upfront</small></td></tr>
+          <tr><td>Reaches the unbanked</td><td><span class="mk n">✕</span></td><td><span class="mk y">✓</span><small>cash pickup</small></td><td><span class="mk n">✕</span><small>needs bank</small></td><td><span class="mk n">✕</span></td><td class="setucol"><span class="mk y">✓</span><small>agent network</small></td></tr>
+          <tr><td>No crypto knowledge needed</td><td><span class="mk y">✓</span></td><td><span class="mk y">✓</span></td><td><span class="mk y">✓</span></td><td><span class="mk n">✕</span><small>wallets, keys</small></td><td class="setucol"><span class="mk y">✓</span><small>invisible</small></td></tr>
+          <tr><td>Corridor focus &amp; price</td><td><span class="mk n">✕</span></td><td><span class="mk p">~</span></td><td><span class="mk p">~</span></td><td><span class="mk p">~</span></td><td class="setucol"><span class="mk y">✓</span><small>corridor-deep</small></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="src">Competitor characteristics summarized from public information (2025): Wise transparent pricing from ~0.33% + mid-market rate; Western Union 500k+ agent locations &amp; cash pickup with rate margin; banks among the most expensive (~15% avg, World Bank). Setu figures are targets. Marks: ✓ strong · ~ partial · ✕ weak.</p>
+    <div class="note good rv">No single incumbent occupies the bottom-right of every row. Setu's wedge is being the <strong>only one that's cheap, instant, transparent, unbanked-reaching, and crypto-invisible at once</strong> — for one corridor, done deeply.</div>
+  </div>
+</section>
+
+<!-- ============ STRUCTURAL ADVANTAGE ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker rv">Why this is structural, not just execution</div>
+    <h2 class="big rv">We're not on a better point of the old curve. We're on a different curve.</h2>
+    <p class="sub rv">A faster horse is still a horse. The incumbents are all optimizing the correspondent-banking-and-float model. Setu's cost base is a near-free stablecoin transfer plus a thin local spread — a structurally lower floor that no amount of incumbent optimization reaches.</p>
+    <div class="mt grid3">
+      <div class="card rv"><span class="ic">🧱</span><h3>No correspondent chain</h3><p>One stablecoin hop replaces a multi-bank relay. The biggest cost and delay simply disappears.</p></div>
+      <div class="card rv d1"><span class="ic">💧</span><h3>No pre-funded float everywhere</h3><p>Incumbents tie up capital in every country. Setu's LP network supplies liquidity on demand, freeing that capital.</p></div>
+      <div class="card rv d2"><span class="ic">⚡</span><h3>Instant finality</h3><p>Settlement in seconds, not days — a product difference the customer feels every single time.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WISE REBUTTAL ============ -->
+<section>
+  <div class="wrap rv" style="max-width:900px">
+    <div class="kicker">The question every investor asks</div>
+    <h2 class="big">"But isn't Wise already cheap and great?"</h2>
+    <p class="sub">Yes — and we respect it. But three things keep the door open. First, Wise still needs a <strong>bank account on both ends</strong>, which excludes the cash-based, unbanked workers who are the heart of the Gulf→South Asia corridor. Second, its float-in-every-country model has a cost floor a stablecoin rail sits beneath. Third, it's a broad, global product — not a corridor-deep one obsessed with the UAE→India lane, the local agents, the merchant loop, and the languages of that specific population. We win by going <em>narrow and deep</em> where a global player goes wide.</p>
+    <div class="note">And critically: the customer Setu serves first — the cash-paid worker without an easy bank account — is one Wise structurally can't serve at all.</div>
+  </div>
+</section>
+
+<!-- ============ MOAT ============ -->
+<section>
+  <div class="wrap">
+    <div class="kicker rv">The moat</div>
+    <h2 class="big rv">Why this gets harder to copy over time, not easier.</h2>
+    <div class="moat rv">
+      <div class="card"><span class="ic">💧</span><h3>Liquidity density</h3><p>Each LP and agent we add tightens spreads, which wins more flow, which attracts more LPs. A latecomer faces a network that's already cheaper.</p></div>
+      <div class="card"><span class="ic">⚖️</span><h3>Regulatory licenses</h3><p>The licensing and partner relationships built corridor-by-corridor are slow, expensive, and hard to replicate — a real barrier.</p></div>
+      <div class="card"><span class="ic">🎭</span><h3>Invisible-UX craft</h3><p>Hiding crypto well is deceptively hard. The execution that makes it feel like a money app is a compounding product advantage.</p></div>
+      <div class="card"><span class="ic">🪙</span><h3>Token-aligned network</h3><p>SETU incentives bind liquidity providers to the network's success, creating loyalty a clone can't simply buy.</p></div>
+      <div class="card"><span class="ic">🤝</span><h3>Corridor trust</h3><p>In remittance, trust is everything. Becoming the default in one diaspora community is a brand moat that travels by word of mouth.</p></div>
+      <div class="card"><span class="ic">🏪</span><h3>The merchant loop</h3><p>Once workers earn and spend within Setu, switching means leaving an entire local economy — not just an app.</p></div>
+    </div>
+    <div class="ctarow mt"><a class="btn solid" href="invest.html">See the investment case →</a><a class="btn ghost" href="index.html">Back to overview →</a></div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="footgrid">
+      <div>
+        <div class="foothead">Setu</div>
+        <p style="max-width:340px">Stablecoin rails for the world's biggest money corridor. Local money in, local money out, the crypto kept invisible.</p>
+      </div>
+      <div>
+        <h5>The pitch</h5>
+        <ul>
+          <li><a href="problem.html">Problem</a></li>
+          <li><a href="market.html">Market</a></li>
+          <li><a href="product.html">Product</a></li>
+          <li><a href="technology.html">Technology</a></li>
+          <li><a href="economics.html">Economics</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>For investors</h5>
+        <ul>
+          <li><a href="tokenomics.html">Tokenomics</a></li>
+          <li><a href="roadmap.html">Roadmap</a></li>
+          <li><a href="competition.html">Competition</a></li>
+          <li><a href="invest.html">The Ask</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footnote">
+      Competitor descriptions are summarized from public sources (2025) for comparison and may change; named companies are not affiliated with and do not endorse Setu. Comparative marks reflect general positioning, not a guarantee for any specific transfer. This website is a concept pitch and is <strong>not</strong> an offer of securities or investment, legal, tax or financial advice. Appropriate licenses and qualified counsel are required before operating.
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
