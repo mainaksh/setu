@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Setu — Send it home. Keep more of it.</title>
+<meta name="description" content="Setu: a stablecoin-rail remittance & merchant-settlement network. Sub-1% transfers, instant settlement, no crypto knowledge required." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,400..700&family=Hanken+Grotesk:wght@300..800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0C1030;        /* midnight indigo */
+    --ink-2:#151a45;
+    --cream:#F4ECDD;      /* warm paper */
+    --cream-dim:#cabfa9;
+    --saffron:#E8A33D;    /* warm accent */
+    --saffron-deep:#c47e1d;
+    --jade:#46C28E;       /* go / success */
+    --rose:#E06A6A;       /* risk / cost */
+    --line:rgba(244,236,221,.14);
+    --line-strong:rgba(244,236,221,.30);
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--ink);color:var(--cream);
+    font-family:"Hanken Grotesk",system-ui,sans-serif;
+    font-weight:380;line-height:1.6;font-size:17px;
+    -webkit-font-smoothing:antialiased;
+    background-image:
+      radial-gradient(900px 500px at 85% -5%, rgba(232,163,61,.16), transparent 60%),
+      radial-gradient(700px 600px at -10% 25%, rgba(70,194,142,.10), transparent 55%);
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+  h1,h2,h3,.disp{font-family:"Fraunces",serif;font-weight:560;line-height:1.05;letter-spacing:-.01em}
+  mark{background:linear-gradient(transparent 55%, rgba(232,163,61,.45) 55%);color:inherit}
+  .mono{font-family:"JetBrains Mono",monospace}
+  a{color:var(--saffron)}
+
+  /* ---------- top bar ---------- */
+  header.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);
+    background:rgba(12,16,48,.72);border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+  .brand{display:flex;align-items:center;gap:11px;font-family:"Fraunces";font-size:23px;font-weight:600}
+  .brand svg{display:block}
+  .nav nav{display:flex;gap:22px;font-size:14px}
+  .nav nav a{color:var(--cream-dim);text-decoration:none}
+  .nav nav a:hover{color:var(--cream)}
+  @media(max-width:780px){.nav nav{display:none}}
+
+  /* ---------- hero ---------- */
+  .hero{padding:74px 0 30px;position:relative;overflow:hidden}
+  .eyebrow{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--saffron);font-weight:600}
+  .hero h1{font-size:clamp(44px,7vw,86px);margin:.28em 0 .25em;font-weight:600}
+  .hero h1 .it{font-style:italic;font-weight:420;color:var(--saffron)}
+  .lede{font-size:clamp(18px,2.1vw,22px);max-width:640px;color:#e9e0cf}
+  .bridge{width:100%;height:auto;margin:26px 0 6px;opacity:.9}
+  .ctarow{display:flex;gap:14px;flex-wrap:wrap;margin-top:18px}
+  .btn{display:inline-block;padding:13px 22px;border-radius:40px;text-decoration:none;font-weight:600;font-size:15px}
+  .btn.solid{background:var(--saffron);color:#241500}
+  .btn.ghost{border:1px solid var(--line-strong);color:var(--cream)}
+  .btn:hover{transform:translateY(-1px)}
+
+  .statband{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+    border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:42px}
+  .statband div{background:var(--ink);padding:20px 18px}
+  .statband b{font-family:"Fraunces";font-size:30px;font-weight:600;display:block;color:var(--saffron)}
+  .statband span{font-size:13px;color:var(--cream-dim);line-height:1.4;display:block;margin-top:3px}
+  @media(max-width:720px){.statband{grid-template-columns:1fr 1fr}}
+
+  /* ---------- section frame ---------- */
+  section{padding:62px 0;border-top:1px solid var(--line)}
+  .kicker{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--jade);font-weight:600;margin-bottom:10px}
+  section h2{font-size:clamp(30px,4.2vw,46px);margin:0 0 14px;max-width:18ch}
+  .sub{color:#ddd3c1;max-width:660px;font-size:18px}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:34px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+  @media(max-width:860px){.grid2,.grid3{grid-template-columns:1fr}}
+
+  .card{background:rgba(255,255,255,.035);border:1px solid var(--line);border-radius:16px;padding:24px}
+  .card h3{font-size:21px;margin:0 0 8px}
+  .card p{margin:0;color:#d7cdba;font-size:15.5px}
+  .num{font-family:"Fraunces";font-size:14px;color:var(--saffron);border:1px solid var(--saffron-deep);
+    width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-weight:600}
+
+  .pill{display:inline-block;font-size:12px;letter-spacing:.04em;padding:4px 11px;border-radius:30px;
+    border:1px solid var(--line-strong);color:var(--cream-dim);margin:0 6px 6px 0}
+  .pill.tech{border-color:rgba(70,194,142,.4);color:var(--jade)}
+
+  /* ---------- cost comparison ---------- */
+  .compare{margin-top:34px;display:grid;gap:14px}
+  .bar{display:grid;grid-template-columns:130px 1fr 80px;align-items:center;gap:14px}
+  .bar .label{font-size:14px;color:var(--cream-dim)}
+  .track{height:30px;background:rgba(255,255,255,.05);border-radius:8px;overflow:hidden;border:1px solid var(--line)}
+  .fill{height:100%;border-radius:8px 0 0 8px;display:flex;align-items:center;padding-left:10px;font-size:13px;font-weight:600;color:#1c1100}
+  .fill.bad{background:linear-gradient(90deg,#E06A6A,#c44)}
+  .fill.mid{background:linear-gradient(90deg,#E8A33D,#c47e1d)}
+  .fill.good{background:linear-gradient(90deg,#46C28E,#2e9d6e);color:#04150d}
+  .bar .amt{font-family:"JetBrains Mono";font-size:14px;text-align:right}
+
+  /* ---------- workflow diagram ---------- */
+  .flowwrap{margin-top:30px;border:1px solid var(--line);border-radius:18px;padding:8px;background:rgba(255,255,255,.02)}
+  .flowtitle{display:flex;align-items:center;gap:10px;padding:14px 16px 4px;font-family:"Fraunces";font-size:19px}
+  .flowtitle .tag{font-family:"Hanken Grotesk";font-size:12px;font-weight:600;letter-spacing:.04em;
+    background:rgba(232,163,61,.16);color:var(--saffron);padding:3px 10px;border-radius:20px}
+  svg.flow{width:100%;height:auto;display:block}
+  .flow .lbl{font:600 13px "Hanken Grotesk",sans-serif;fill:var(--cream)}
+  .flow .sub{font:400 11px "Hanken Grotesk",sans-serif;fill:var(--cream-dim)}
+  .flow .step{font:600 11px "JetBrains Mono",monospace;fill:var(--saffron)}
+  .flow .node{fill:var(--ink-2);stroke:var(--line-strong)}
+  .flow .nodeA{fill:rgba(232,163,61,.14);stroke:var(--saffron-deep)}
+  .flow .nodeG{fill:rgba(70,194,142,.13);stroke:#2e9d6e}
+  .flow .arrow{stroke:var(--cream-dim);stroke-width:1.6;fill:none;marker-end:url(#arr)}
+
+  /* ---------- jurisdiction map ---------- */
+  .jur{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;margin-top:34px;align-items:center}
+  @media(max-width:860px){.jur{grid-template-columns:1fr}}
+
+  /* ---------- roadmap ---------- */
+  .road{margin-top:34px;position:relative;padding-left:26px}
+  .road:before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:var(--line-strong)}
+  .phase{position:relative;padding:0 0 26px 14px}
+  .phase:before{content:"";position:absolute;left:-25px;top:5px;width:14px;height:14px;border-radius:50%;
+    background:var(--saffron);box-shadow:0 0 0 4px rgba(232,163,61,.16)}
+  .phase h3{font-size:19px;margin:0 0 2px}
+  .phase .when{font-family:"JetBrains Mono";font-size:12px;color:var(--jade);letter-spacing:.03em}
+  .phase p{margin:6px 0 0;color:#d3c9b6;font-size:15px}
+
+  /* ---------- econ table ---------- */
+  table{width:100%;border-collapse:collapse;margin-top:30px;font-size:15px}
+  th,td{text-align:left;padding:13px 14px;border-bottom:1px solid var(--line)}
+  th{font-family:"Fraunces";font-weight:600;color:var(--saffron);font-size:14px;letter-spacing:.02em}
+  td.mono{font-family:"JetBrains Mono";font-size:14px}
+  tr.total td{border-top:2px solid var(--line-strong);font-weight:700}
+  tr.total .mono{color:var(--jade)}
+
+  /* token allocation */
+  .alloc{display:grid;grid-template-columns:200px 1fr;gap:24px;margin-top:30px;align-items:center}
+  @media(max-width:720px){.alloc{grid-template-columns:1fr}}
+  .legend li{list-style:none;display:flex;align-items:center;gap:10px;padding:6px 0;font-size:14.5px}
+  .legend{margin:0;padding:0}
+  .dot{width:13px;height:13px;border-radius:3px;flex:none}
+
+  .note{border-left:3px solid var(--saffron);background:rgba(232,163,61,.07);padding:16px 20px;border-radius:0 12px 12px 0;margin-top:18px;font-size:15px;color:#e6dcc9}
+  .risk{border-left-color:var(--rose);background:rgba(224,106,106,.08)}
+
+  footer{padding:54px 0 70px;border-top:1px solid var(--line);color:var(--cream-dim);font-size:14px}
+  .foothead{font-family:"Fraunces";font-size:30px;color:var(--cream);margin-bottom:8px}
+
+  /* reveal */
+  .rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease}
+  .rv.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <div class="brand">
+      <svg width="26" height="26" viewBox="0 0 26 26"><path d="M2 18 C8 6, 18 6, 24 18" stroke="#E8A33D" stroke-width="2.4" fill="none" stroke-linecap="round"/><circle cx="2" cy="18" r="2.6" fill="#46C28E"/><circle cx="24" cy="18" r="2.6" fill="#46C28E"/></svg>
+      Setu
+    </div>
+    <nav>
+      <a href="#problem">The problem</a>
+      <a href="#how">How it works</a>
+      <a href="#stack">Under the hood</a>
+      <a href="#adopt">Adoption</a>
+      <a href="#token">Token</a>
+      <a href="#where">Where & legal</a>
+      <a href="#live">Go live</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Cross-border money · Built for the corridor that matters most</div>
+    <h1>Send it home.<br><span class="it">Keep more of it.</span></h1>
+    <p class="lede">Setu lets a worker in the Gulf send money to family in India in <strong>seconds</strong>, for <strong>under 1%</strong> — without ever knowing a stablecoin moved underneath. The crypto is the engine. The person just sees money arrive.</p>
+
+    <svg class="bridge" viewBox="0 0 1120 130" preserveAspectRatio="none" aria-hidden="true">
+      <defs><linearGradient id="bg" x1="0" x2="1"><stop offset="0" stop-color="#46C28E"/><stop offset="1" stop-color="#E8A33D"/></linearGradient></defs>
+      <path d="M20 95 C 320 10, 800 10, 1100 95" stroke="url(#bg)" stroke-width="3" fill="none"/>
+      <line x1="20" y1="95" x2="20" y2="120" stroke="#46C28E" stroke-width="3"/>
+      <line x1="1100" y1="95" x2="1100" y2="120" stroke="#E8A33D" stroke-width="3"/>
+      <circle cx="20" cy="95" r="6" fill="#46C28E"/><circle cx="1100" cy="95" r="6" fill="#E8A33D"/>
+      <text x="20" y="118" class="lbl" style="fill:#46C28E;font:600 13px sans-serif">🇦🇪 Dubai · sender</text>
+      <text x="1010" y="118" class="lbl" style="fill:#E8A33D;font:600 13px sans-serif">India · family</text>
+      <circle cx="560" cy="34" r="5" fill="#F4ECDD"><animate attributeName="cx" values="20;1100" dur="2.6s" repeatCount="indefinite"/><animate attributeName="cy" values="95;10;95" dur="2.6s" repeatCount="indefinite"/></circle>
+    </svg>
+
+    <div class="ctarow">
+      <a class="btn solid" href="#how">See how it works ↓</a>
+      <a class="btn ghost" href="#live">How we launch it</a>
+    </div>
+
+    <div class="statband">
+      <div><b>5–7%</b><span>What banks &amp; Western Union take today on a transfer</span></div>
+      <div><b>&lt;1%</b><span>All-in cost on Setu, settlement in seconds</span></div>
+      <div><b>$200B+</b><span>Yearly money sent into India — the world's #1 remittance market</span></div>
+      <div><b>~76%</b><span>Of all crypto payments are already in stablecoins</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section id="problem">
+  <div class="wrap rv">
+    <div class="kicker">The problem, in plain words</div>
+    <h2>Sending money home is slow, and the fee is brutal.</h2>
+    <p class="sub">A construction worker in Dubai sends <strong>AED 1,000</strong> (about $270) to his family every month. Between the transfer fee and a bad exchange rate, roughly $17 quietly disappears. That's a day's food for the family — gone, every single month, to middlemen.</p>
+
+    <div class="compare">
+      <div class="bar"><span class="label">Bank / Western Union</span><div class="track"><div class="fill bad" style="width:92%">2–5 days · high FX spread</div></div><span class="amt">−$17.50</span></div>
+      <div class="bar"><span class="label">Other apps</span><div class="track"><div class="fill mid" style="width:48%">hours · 2–3%</div></div><span class="amt">−$8.00</span></div>
+      <div class="bar"><span class="label">Setu</span><div class="track"><div class="fill good" style="width:14%">seconds · &lt;1%</div></div><span class="amt">−$2.40</span></div>
+    </div>
+    <div class="note">Saving ~$15 on every transfer is <strong>~$180 a year</strong> back in the family's pocket. That felt, repeated saving — not hype — is what makes people switch and tell their friends.</div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="wrap rv">
+    <div class="kicker">How it works</div>
+    <h2>The big idea: hide the crypto, keep the speed.</h2>
+    <p class="sub">There are two layers. The person on top sees a normal money app. Underneath, a regulated stablecoin teleports value across the border for almost nothing. Here are the three workflows that make the whole thing run.</p>
+
+    <!-- FLOW A: sender -->
+    <div class="flowwrap">
+      <div class="flowtitle"><span class="tag">FLOW 1</span> A worker sends money home</div>
+      <svg class="flow" viewBox="0 0 1120 220">
+        <defs><marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#cabfa9"/></marker></defs>
+
+        <rect class="nodeA" x="14" y="70" width="170" height="80" rx="12"/>
+        <text x="99" y="100" text-anchor="middle" class="lbl">📱 Sender pays in</text>
+        <text x="99" y="120" text-anchor="middle" class="sub">AED via UPI / card / cash agent</text>
+        <text x="99" y="60" text-anchor="middle" class="step">STEP 1</text>
+
+        <path class="arrow" d="M188 110 H262"/>
+
+        <rect class="node" x="266" y="70" width="190" height="80" rx="12"/>
+        <text x="361" y="100" text-anchor="middle" class="lbl">🔁 Auto-convert</text>
+        <text x="361" y="120" text-anchor="middle" class="sub">AED → USDC stablecoin</text>
+        <text x="361" y="60" text-anchor="middle" class="step">STEP 2</text>
+
+        <path class="arrow" d="M460 110 H534"/>
+
+        <rect class="node" x="538" y="70" width="190" height="80" rx="12"/>
+        <text x="633" y="96" text-anchor="middle" class="lbl">🌐 Stablecoin rail</text>
+        <text x="633" y="116" text-anchor="middle" class="sub">crosses border in seconds</text>
+        <text x="633" y="60" text-anchor="middle" class="step">STEP 3</text>
+
+        <path class="arrow" d="M732 110 H806"/>
+
+        <rect class="node" x="810" y="70" width="170" height="80" rx="12"/>
+        <text x="895" y="96" text-anchor="middle" class="lbl">💱 Liquidity partner</text>
+        <text x="895" y="116" text-anchor="middle" class="sub">USDC → INR locally</text>
+        <text x="895" y="60" text-anchor="middle" class="step">STEP 4</text>
+
+        <path class="arrow" d="M984 110 H1040 V178 H100 V152"/>
+
+        <rect class="nodeG" x="14" y="158" width="220" height="54" rx="12"/>
+        <text x="124" y="180" text-anchor="middle" class="lbl">🏠 Family receives INR</text>
+        <text x="124" y="198" text-anchor="middle" class="sub">bank / UPI / cash-out · &lt;1% total</text>
+      </svg>
+    </div>
+
+    <!-- FLOW B: merchant -->
+    <div class="flowwrap">
+      <div class="flowtitle"><span class="tag">FLOW 2</span> A shop gets paid &amp; settles instantly</div>
+      <svg class="flow" viewBox="0 0 1120 150">
+        <rect class="nodeA" x="14" y="40" width="200" height="74" rx="12"/>
+        <text x="114" y="70" text-anchor="middle" class="lbl">🧾 Customer scans QR</text>
+        <text x="114" y="90" text-anchor="middle" class="sub">pays in stablecoin or local</text>
+        <text x="114" y="32" text-anchor="middle" class="step">STEP 1</text>
+        <path class="arrow" d="M218 77 H300"/>
+        <rect class="node" x="304" y="40" width="220" height="74" rx="12"/>
+        <text x="414" y="70" text-anchor="middle" class="lbl">⚡ Instant settlement</text>
+        <text x="414" y="90" text-anchor="middle" class="sub">no 2–3 day card hold</text>
+        <text x="414" y="32" text-anchor="middle" class="step">STEP 2</text>
+        <path class="arrow" d="M528 77 H610"/>
+        <rect class="nodeG" x="614" y="40" width="240" height="74" rx="12"/>
+        <text x="734" y="70" text-anchor="middle" class="lbl">🏦 Cash in bank same day</text>
+        <text x="734" y="90" text-anchor="middle" class="sub">fee far below card 2–3%</text>
+        <text x="734" y="32" text-anchor="middle" class="step">STEP 3</text>
+        <path class="arrow" d="M858 77 H940"/>
+        <rect class="node" x="944" y="40" width="160" height="74" rx="12"/>
+        <text x="1024" y="80" text-anchor="middle" class="lbl">↺ Worker spends</text>
+        <text x="1024" y="32" text-anchor="middle" class="step">LOOP</text>
+      </svg>
+    </div>
+
+    <!-- FLOW C: liquidity -->
+    <div class="flowwrap">
+      <div class="flowtitle"><span class="tag">FLOW 3</span> Who actually moves the cash? Liquidity providers.</div>
+      <svg class="flow" viewBox="0 0 1120 150">
+        <rect class="node" x="14" y="40" width="220" height="74" rx="12"/>
+        <text x="124" y="70" text-anchor="middle" class="lbl">🤝 Local agent / LP</text>
+        <text x="124" y="90" text-anchor="middle" class="sub">holds INR float + stakes SETU</text>
+        <text x="124" y="32" text-anchor="middle" class="step">PROVIDES</text>
+        <path class="arrow" d="M238 77 H320"/>
+        <rect class="nodeA" x="324" y="40" width="240" height="74" rx="12"/>
+        <text x="444" y="70" text-anchor="middle" class="lbl">💧 Fills payout requests</text>
+        <text x="444" y="90" text-anchor="middle" class="sub">competes on tightest FX spread</text>
+        <text x="444" y="32" text-anchor="middle" class="step">EARNS</text>
+        <path class="arrow" d="M568 77 H650"/>
+        <rect class="nodeG" x="654" y="40" width="240" height="74" rx="12"/>
+        <text x="774" y="70" text-anchor="middle" class="lbl">📈 Fees + staking yield</text>
+        <text x="774" y="90" text-anchor="middle" class="sub">paid in stablecoin + SETU</text>
+        <text x="774" y="32" text-anchor="middle" class="step">REWARD</text>
+        <path class="arrow" d="M898 77 H980"/>
+        <rect class="node" x="984" y="40" width="120" height="74" rx="12"/>
+        <text x="1044" y="80" text-anchor="middle" class="lbl">More LPs join</text>
+        <text x="1044" y="32" text-anchor="middle" class="step">FLYWHEEL</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ARCHITECTURE / UNDER THE HOOD -->
+<section id="stack">
+  <div class="wrap rv">
+    <div class="kicker">Under the hood · the technical bits</div>
+    <h2>Two layers, so a person never has to "get" crypto.</h2>
+    <div class="grid2">
+      <div class="card">
+        <h3>Layer 1 — Settlement (value-stable)</h3>
+        <p>Value crosses borders as a <strong>regulated stablecoin</strong> (USDC), so a sender's money is never exposed to crypto volatility. We <em>use</em> an established, regulated stablecoin rather than minting our own — instant trust, far less regulatory burden, faster launch.</p>
+        <div style="margin-top:14px">
+          <span class="pill tech">USDC stablecoin</span>
+          <span class="pill tech">Stellar / Solana / Base L2</span>
+          <span class="pill tech">sub-cent network fees</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Layer 2 — Network token (SETU)</h3>
+        <p>SETU is the plumbing for the people who <strong>run the rails</strong>: liquidity providers stake it for the right to fill payouts and earn fees, it grants fee rebates, and it governs corridor settings &amp; treasury. A grandmother sending money never has to see it, hold it, or understand it.</p>
+        <div style="margin-top:14px">
+          <span class="pill">LP staking</span>
+          <span class="pill">fee rebates</span>
+          <span class="pill">governance</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid3">
+      <div class="card"><div class="num">A</div><h3>Invisible wallets</h3><p>Account abstraction + passkeys. No seed phrases, no "send to this 0x address." You log in like any app; keys are handled for you.</p></div>
+      <div class="card"><div class="num">B</div><h3>On/off ramps</h3><p>Cash-in in the Gulf (UPI, cards, cash agents); payout in India through <strong>licensed partners</strong> into bank/UPI/cash — never as an unlicensed operator.</p></div>
+      <div class="card"><div class="num">C</div><h3>Compliance engine</h3><p>KYC/AML at onboarding, on-chain transaction monitoring, and Travel-Rule data sharing baked in from day one — not bolted on later.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ADOPTION -->
+<section id="adopt">
+  <div class="wrap rv">
+    <div class="kicker">Why people adopt it fast</div>
+    <h2>Adoption is a behaviour problem, not a tech problem.</h2>
+    <p class="sub">Most coins die from zero users, not bad code. Setu is engineered so the very first action a person takes already pays off — and both ends of a remittance are warm contacts who invite each other.</p>
+    <div class="grid3">
+      <div class="card"><div class="num">1</div><h3>Hide the crypto</h3><p>The UX is "send money," never "buy a token." The blockchain is an implementation detail the user never confronts.</p></div>
+      <div class="card"><div class="num">2</div><h3>Instant felt savings</h3><p>"Send AED 1,000, family keeps ~$15 more than the bank." A reward you feel on transfer #1, not a promise.</p></div>
+      <div class="card"><div class="num">3</div><h3>Agent network</h3><p>Cash-in / cash-out agents reach the unbanked — the M-Pesa playbook — so you don't need a bank account to start.</p></div>
+      <div class="card"><div class="num">4</div><h3>Built-in referral</h3><p>Every transfer involves family. Senders invite receivers; receivers become senders. The product spreads along real relationships.</p></div>
+      <div class="card"><div class="num">5</div><h3>Merchant QR loop</h3><p>Workers earn → spend at local shops accepting Setu → shops settle cheaply → liquidity deepens. A closed local economy forms.</p></div>
+      <div class="card"><div class="num">6</div><h3>Density before breadth</h3><p>Win <strong>one corridor</strong> (UAE→India) completely first. Density = liquidity = tighter spreads = unbeatable vs incumbents = word of mouth.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ECONOMICS -->
+<section id="econ">
+  <div class="wrap rv">
+    <div class="kicker">The money math · how &lt;1% is even possible</div>
+    <h2>Where the fee goes on a $270 transfer.</h2>
+    <p class="sub">The reason banks charge 5–7% is layers of correspondent banks and a hidden FX markup. Setu strips that to almost nothing — the only real cost is a thin FX spread and the local cash-out.</p>
+    <table>
+      <tr><th>Cost component</th><th>Bank / WU</th><th>Setu</th><th>Why</th></tr>
+      <tr><td>Transfer / network fee</td><td class="mono">$5.00</td><td class="mono">$0.01</td><td>Stablecoin moves for fractions of a cent</td></tr>
+      <tr><td>FX spread</td><td class="mono">$10.50</td><td class="mono">$1.90</td><td>LPs compete on the tightest spread</td></tr>
+      <tr><td>Cash-out / payout</td><td class="mono">$2.00</td><td class="mono">$0.50</td><td>Licensed local payout partner</td></tr>
+      <tr class="total"><td>Total cost on $270</td><td class="mono">$17.50 (6.5%)</td><td class="mono">$2.41 (&lt;1%)</td><td>Family keeps ~$15 more</td></tr>
+    </table>
+    <div class="note">Setu's own revenue is a tiny slice of that thin spread — real, recurring transaction revenue, not token speculation. At scale, even a few cents per transfer across millions of monthly transfers is a serious business.</div>
+  </div>
+</section>
+
+<!-- TOKEN -->
+<section id="token">
+  <div class="wrap rv">
+    <div class="kicker">The SETU token</div>
+    <h2>A utility token for the network — not a get-rich pitch.</h2>
+    <p class="sub">SETU exists to coordinate and reward the people who supply liquidity and run the rails. Its value comes from <strong>real fee capture and staking demand</strong>, not marketing. Common users never need to buy it.</p>
+    <div class="alloc">
+      <svg viewBox="0 0 42 42" width="200" height="200" aria-hidden="true">
+        <circle cx="21" cy="21" r="15.9" fill="none" stroke="#46C28E" stroke-width="9" stroke-dasharray="35 65" stroke-dashoffset="25"/>
+        <circle cx="21" cy="21" r="15.9" fill="none" stroke="#E8A33D" stroke-width="9" stroke-dasharray="25 75" stroke-dashoffset="-10"/>
+        <circle cx="21" cy="21" r="15.9" fill="none" stroke="#c47e1d" stroke-width="9" stroke-dasharray="20 80" stroke-dashoffset="-35"/>
+        <circle cx="21" cy="21" r="15.9" fill="none" stroke="#E06A6A" stroke-width="9" stroke-dasharray="12 88" stroke-dashoffset="-55"/>
+        <circle cx="21" cy="21" r="15.9" fill="none" stroke="#cabfa9" stroke-width="9" stroke-dasharray="8 92" stroke-dashoffset="-67"/>
+      </svg>
+      <ul class="legend">
+        <li><span class="dot" style="background:#46C28E"></span><strong>35% — Liquidity &amp; agent rewards.</strong>&nbsp;Emitted over years to bootstrap the LP flywheel.</li>
+        <li><span class="dot" style="background:#E8A33D"></span><strong>25% — Ecosystem &amp; growth.</strong>&nbsp;Corridor launches, merchant onboarding, referrals.</li>
+        <li><span class="dot" style="background:#c47e1d"></span><strong>20% — Team &amp; advisors.</strong>&nbsp;Long vesting (4yr, 1yr cliff) to align incentives.</li>
+        <li><span class="dot" style="background:#E06A6A"></span><strong>12% — Treasury / reserve.</strong>&nbsp;Governed on-chain for stability &amp; runway.</li>
+        <li><span class="dot" style="background:#cabfa9"></span><strong>8% — Public / community.</strong>&nbsp;Fair, capped distribution.</li>
+      </ul>
+    </div>
+    <div class="note risk"><strong>Said plainly:</strong> SETU is never marketed to senders as an investment. That separation — stable money for users, utility token for operators — is both the compliance-safe design <em>and</em> the reason adoption isn't gated on speculation.</div>
+  </div>
+</section>
+
+<!-- WHERE & LEGAL -->
+<section id="where">
+  <div class="wrap rv">
+    <div class="kicker">Where it lives · you said location is free</div>
+    <h2>Home base: Abu Dhabi (ADGM), United Arab Emirates.</h2>
+    <p class="sub">For <em>this</em> corridor, the UAE is the single wisest pick — and the choice is strategic, not just tax-driven.</p>
+    <div class="jur">
+      <div>
+        <div class="card" style="margin-bottom:14px"><h3>🛬 It sits on the corridor</h3><p>Millions of South-Asian workers live and earn in the Gulf. Your sender base is physically next door to your HQ — ideal for cash-in, support, and trust.</p></div>
+        <div class="card" style="margin-bottom:14px"><h3>⚖️ Clear crypto law</h3><p>ADGM and Dubai's VARA offer mature, explicit licensing for virtual assets and stablecoin activity — you build inside the rules, not in a grey zone.</p></div>
+        <div class="card"><h3>🏦 Banking + no income tax</h3><p>Strong stablecoin-friendly banking rails and a business-friendly tax regime keep operating costs and friction low.</p></div>
+      </div>
+      <div>
+        <svg class="flow" viewBox="0 0 360 360" width="100%">
+          <defs><marker id="arr2" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#cabfa9"/></marker></defs>
+          <circle cx="180" cy="80" r="52" fill="rgba(232,163,61,.14)" stroke="#c47e1d"/>
+          <text x="180" y="74" text-anchor="middle" class="lbl">ADGM Foundation</text>
+          <text x="180" y="92" text-anchor="middle" class="sub">issuer · IP · treasury</text>
+          <line x1="180" y1="132" x2="90" y2="200" class="arrow"/>
+          <line x1="180" y1="132" x2="270" y2="200" class="arrow"/>
+          <rect x="22" y="200" width="136" height="70" rx="12" class="node"/>
+          <text x="90" y="230" text-anchor="middle" class="lbl">UAE OpCo</text>
+          <text x="90" y="248" text-anchor="middle" class="sub">VARA-licensed · cash-in</text>
+          <rect x="202" y="200" width="136" height="70" rx="12" class="nodeG"/>
+          <text x="270" y="230" text-anchor="middle" class="lbl">India payout</text>
+          <text x="270" y="248" text-anchor="middle" class="sub">via licensed partner</text>
+          <line x1="90" y1="270" x2="180" y2="320" class="arrow"/>
+          <line x1="270" y1="270" x2="180" y2="320" class="arrow"/>
+          <rect x="110" y="320" width="140" height="34" rx="10" class="nodeA"/>
+          <text x="180" y="342" text-anchor="middle" class="lbl">USDC settlement rail</text>
+        </svg>
+      </div>
+    </div>
+    <div class="note risk"><strong>The honest legal reality — read this before spending a rupee.</strong> India taxes crypto gains at 30% plus a 1% TDS on transactions and regulates payment/remittance flows tightly (RBI / FEMA). That is exactly why Setu <em>issues and operates from the UAE</em> and reaches India only through <strong>licensed payout partners</strong> — never as an unlicensed money transmitter inside India. None of this page is legal or financial advice. Before launch you must engage qualified counsel in every jurisdiction you touch, obtain the right VASP / payment licenses, and build a real AML program. Skipping this is how projects get shut down, not scaled.</div>
+  </div>
+</section>
+
+<!-- GO LIVE -->
+<section id="live">
+  <div class="wrap rv">
+    <div class="kicker">How this gets made live</div>
+    <h2>From idea to a working corridor, in five phases.</h2>
+    <div class="road">
+      <div class="phase"><span class="when">PHASE 0 · weeks 0–12</span><h3>Legal &amp; foundations</h3><p>Set up the ADGM entity, engage crypto counsel, design the AML/KYC program, and sign a stablecoin + banking partner and an India payout partner. Nothing ships before this is real.</p></div>
+      <div class="phase"><span class="when">PHASE 1 · months 3–6</span><h3>MVP · one corridor (UAE → India)</h3><p>A clean mobile app: cash-in in the UAE, USDC rail, payout into Indian bank/UPI via partner. Liquidity handled manually at first. Goal: the first 1,000 real senders who feel the savings.</p></div>
+      <div class="phase"><span class="when">PHASE 2 · months 6–12</span><h3>Liquidity network + SETU utility</h3><p>Open up the LP/agent program with SETU staking so liquidity scales without us holding all the float. Spreads tighten as more LPs compete.</p></div>
+      <div class="phase"><span class="when">PHASE 3 · months 12–18</span><h3>Merchant acceptance loop</h3><p>QR payments at local shops in receiving regions, closing the earn-and-spend loop and deepening on-the-ground demand.</p></div>
+      <div class="phase"><span class="when">PHASE 4 · month 18+</span><h3>New corridors</h3><p>Replicate the proven playbook: UAE→Pakistan, UAE→Philippines, UAE→Bangladesh, then Saudi and Qatar origins. Compliance re-checked for every new lane.</p></div>
+    </div>
+    <div class="note">My honest role: I can design the concept, write this site and the tokenomics doc, and build the product front-end. What I <em>cannot</em> manufacture is the first 1,000 real users and the partner relationships — that's hustle and trust on the ground. The tech is the easy 20%; the corridor density is the hard, valuable 80%.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foothead">Setu — a bridge for money, and the people on both ends of it.</div>
+    <p style="max-width:680px">Working name (Sanskrit / Hindi: <em>सेतु</em>, "bridge") — verify trademark availability before use. This page is a concept explainer, not an offer, a security, or legal/financial advice. Crypto and remittance activity is heavily regulated and varies by country; obtain qualified counsel and the necessary licenses before operating.</p>
+    <p style="margin-top:22px;color:rgba(244,236,221,.45)">© Concept draft · prepared as a starting point you can host, edit, and pitch.</p>
+  </div>
+</footer>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
